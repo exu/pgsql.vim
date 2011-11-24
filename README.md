@@ -7,4 +7,8 @@ Vim syntax file
 * Filenames:    *.pgsql *.plpgsql
 * URL:          http://www.gunduz.org/postgresql/pgsql.vim
 
+If you need to highlight any of \*.sql files 
+you can insert this lines to your *filetype.vim*
+
+    au BufNewFile,BufRead *.sql setf pgsql
 
