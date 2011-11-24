@@ -1,4 +1,4 @@
-Vim syntax file
+Vim Postgresql syntax file
 ===============
 
 * Language:     pgsql
