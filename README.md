@@ -12,3 +12,6 @@ you can insert this lines to your *filetype.vim*
 
     au BufNewFile,BufRead *.sql setf pgsql
 
+Or load it using the default sql.vim:
+
+    let g:sql_type_default = 'pgsql'

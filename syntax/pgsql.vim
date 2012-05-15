@@ -76,8 +76,8 @@ syn sync ccomment pgsqlComment
 syn keyword pgsqlType		 anyarray anyelement abstime anyenum
 syn keyword pgsqlType		 anynonarray any aclitem bytea bit
 syn keyword pgsqlType		 boolean bigint box cidr cstring char
-syn keyword pgsqlType		 character cid circle double date
-syn keyword pgsqlType		 gtsvector inet interval internal
+syn keyword pgsqlType		 character cid circle double date enum
+syn keyword pgsqlType		 gtsvector hstore inet interval internal
 syn keyword pgsqlType		 int2vector integer line lseg
 syn keyword pgsqlType		 language_handler macaddr money numeric
 syn keyword pgsqlType		 name opaque oidvector oid polygon point
@@ -86,7 +86,7 @@ syn keyword pgsqlType		 regtype refcursor regoperator reltime
 syn keyword pgsqlType		 record regproc regdictionary regoper
 syn keyword pgsqlType		 regprocedure regconfig smgr smallint
 syn keyword pgsqlType		 time tsquery tinterval trigger tid
-syn keyword pgsqlType		 timestamp text tsvector txid_snapshot
+syn keyword pgsqlType		 timestamp timestamptz text tsvector txid_snapshot
 syn keyword pgsqlType		 unknown uuid void varying with without
 syn keyword pgsqlType		 xml xid zone
 
