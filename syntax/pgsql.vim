@@ -87,7 +87,7 @@ syn keyword pgsqlType		 record regproc regdictionary regoper
 syn keyword pgsqlType		 regprocedure regconfig smgr smallint
 syn keyword pgsqlType		 time tsquery tinterval trigger tid
 syn keyword pgsqlType		 timestamp timestamptz text tsvector txid_snapshot
-syn keyword pgsqlType		 unknown uuid void varying with without
+syn keyword pgsqlType		 unknown uuid void varchar varying with without
 syn keyword pgsqlType		 xml xid zone
 
 syn region pgsqlType		 start="float\W" end="."me=s-1
