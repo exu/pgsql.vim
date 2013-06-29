@@ -54,6 +54,7 @@ syn keyword pgsqlSpecial	 false null true
 " Strings (single- and double-quote)
 syn region pgsqlString		 start=+"+  skip=+\\\\\|\\"+  end=+"+
 syn region pgsqlString		 start=+'+  skip=+\\\\\|\\'+  end=+'+
+syn region pgsqlString		 start=+\$\z(\w*\)\$+  end=+\$\z1\$+
 
 " Numbers and hexidecimal values
 syn match pgsqlNumber		 "-\=\<[0-9]*\>"
