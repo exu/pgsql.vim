@@ -75,21 +75,22 @@ syn sync ccomment pgsqlComment
 " Column types
 
 syn keyword pgsqlType		 anyarray anyelement abstime anyenum
-syn keyword pgsqlType		 anynonarray any aclitem bytea bit
-syn keyword pgsqlType		 boolean bigint box cidr cstring char
-syn keyword pgsqlType		 character cid circle double date enum
-syn keyword pgsqlType		 gtsvector hstore inet interval internal
-syn keyword pgsqlType		 int2vector int integer line lseg
+syn keyword pgsqlType		 anynonarray any aclitem bytea bigserial
+syn keyword pgsqlType		 bit boolean bigint box cidr cstring char
+syn keyword pgsqlType		 character cid circle decimal double date 
+syn keyword pgsqlType		 enum gtsvector hstore inet interval 
+syn keyword pgsqlType		 internal int2vector int integer line lseg
 syn keyword pgsqlType		 language_handler macaddr money numeric
 syn keyword pgsqlType		 name opaque oidvector oid polygon point
 syn keyword pgsqlType		 path period precision regclass real
 syn keyword pgsqlType		 regtype refcursor regoperator reltime
 syn keyword pgsqlType		 record regproc regdictionary regoper
 syn keyword pgsqlType		 regprocedure regconfig smgr smallint
-syn keyword pgsqlType		 time tsquery tinterval trigger tid
-syn keyword pgsqlType		 timestamp timestamptz text tsvector txid_snapshot
-syn keyword pgsqlType		 unknown uuid void varchar varying with without
-syn keyword pgsqlType		 xml xid zone
+syn keyword pgsqlType		 serial smallserial time tsquery tinterval 
+syn keyword pgsqlType		 trigger tid timestamp timestamptz text 
+syn keyword pgsqlType		 tsvector txid_snapshot unknown uuid void 
+syn keyword pgsqlType		 varchar varying with without xml xid 
+syn keyword pgsqlType		 zone
 
 syn region pgsqlType		 start="float\W" end="."me=s-1
 syn region pgsqlType		 start="float$" end="."me=s-1
