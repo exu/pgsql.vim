@@ -16,11 +16,11 @@ elseif exists("b:current_syntax")
   finish
 endif
 
-" Always ignore case 
+" Always ignore case
 syn case ignore
 
 " General keywords which don't fall into other categories
-syn keyword pgsqlKeyword	 abort alter aggregate analyze and as alias add
+syn keyword pgsqlKeyword	 abort alter after aggregate analyze and as alias add
 syn keyword pgsqlKeyword	 begin by before
 syn keyword pgsqlKeyword	 conversion cascade current_date current_time current_timestamp class close
 syn keyword pgsqlKeyword	 cluster checkpoint check comment
@@ -30,10 +30,10 @@ syn keyword pgsqlKeyword	 deferrable deferred defaults do diagnostics
 syn keyword pgsqlKeyword	 explain elsif end exists execute exclusion found exception except each exit
 syn keyword pgsqlKeyword	 function foreign from full fetch force for
 syn keyword pgsqlKeyword	 group grant global get
-syn keyword pgsqlKeyword	 having 
+syn keyword pgsqlKeyword	 having
 syn keyword pgsqlKeyword	 index into immutable inner initially immediate inherits instead insert in if
 syn keyword pgsqlKeyword	 join
-syn keyword pgsqlKeyword	 key 
+syn keyword pgsqlKeyword	 key
 syn keyword pgsqlKeyword	 language lock local limit left load loop
 syn keyword pgsqlKeyword	 max min move match
 syn keyword pgsqlKeyword	 notify no new null next
@@ -41,12 +41,14 @@ syn keyword pgsqlKeyword	 or operator outer order old on out open
 syn keyword pgsqlKeyword	 prepare plpgsql primary password primary privilege procedure partial prepared
 syn keyword pgsqlKeyword	 partition preserve perform
 syn keyword pgsqlKeyword	 role replace reindex release reset revoke rollback references row rows rowtype rule restrict
-syn keyword pgsqlKeyword	 returns return 
+syn keyword pgsqlKeyword	 returns return
 syn keyword pgsqlKeyword	 select set strict schema sequence savepoint simple system stable setof
 syn keyword pgsqlKeyword	 truncate to tranaction trigger table tables temp temporary tablespace type
 syn keyword pgsqlKeyword	 update unique unlisten using
 syn keyword pgsqlKeyword	 verbose view values varying vacuum
 syn keyword pgsqlKeyword	 where with
+
+" Begin
 
 " Special values
 syn keyword pgsqlSpecial	 false null true
@@ -75,31 +77,31 @@ syn sync ccomment pgsqlComment
 " Column types
 
 syn keyword pgsqlType        anyarray anyelement abstime anyenum
-syn keyword pgsqlType        anynonarray any aclitem 
-syn keyword pgsqlType        bytea bigserial bit boolean bigint box 
-syn keyword pgsqlType        cidr cstring char character cid circle 
-syn keyword pgsqlType        decimal double date 
-syn keyword pgsqlType        enum 
-syn keyword pgsqlType        gtsvector 
-syn keyword pgsqlType        hstore 
-syn keyword pgsqlType        inet interval 
-syn keyword pgsqlType        internal int2vector int integer 
-syn keyword pgsqlType        line lseg language_handler 
-syn keyword pgsqlType        macaddr money 
-syn keyword pgsqlType        numeric name 
-syn keyword pgsqlType        opaque oidvector oid 
-syn keyword pgsqlType        polygon point path period precision 
-syn keyword pgsqlType        regclass real regtype refcursor regoperator 
+syn keyword pgsqlType        anynonarray any aclitem
+syn keyword pgsqlType        bytea bigserial bit boolean bigint box
+syn keyword pgsqlType        cidr cstring char character cid circle
+syn keyword pgsqlType        decimal double date
+syn keyword pgsqlType        enum
+syn keyword pgsqlType        gtsvector
+syn keyword pgsqlType        hstore
+syn keyword pgsqlType        inet interval
+syn keyword pgsqlType        internal int2vector int integer
+syn keyword pgsqlType        line lseg language_handler
+syn keyword pgsqlType        macaddr money
+syn keyword pgsqlType        numeric name
+syn keyword pgsqlType        opaque oidvector oid
+syn keyword pgsqlType        polygon point path period precision
+syn keyword pgsqlType        regclass real regtype refcursor regoperator
 syn keyword pgsqlType        reltime record regproc regdictionary regoper
-syn keyword pgsqlType        regprocedure regconfig 
-syn keyword pgsqlType        smgr smallint serial smallserial 
-syn keyword pgsqlType        time tsquery tinterval 
-syn keyword pgsqlType        trigger tid timestamp timestamptz text 
-syn keyword pgsqlType        tsvector txid_snapshot 
-syn keyword pgsqlType        unknown uuid 
-syn keyword pgsqlType        void varchar varying 
-syn keyword pgsqlType        with without 
-syn keyword pgsqlType        xml xid 
+syn keyword pgsqlType        regprocedure regconfig
+syn keyword pgsqlType        smgr smallint serial smallserial
+syn keyword pgsqlType        time tsquery tinterval
+syn keyword pgsqlType        trigger tid timestamp timestamptz text
+syn keyword pgsqlType        tsvector txid_snapshot
+syn keyword pgsqlType        unknown uuid
+syn keyword pgsqlType        void varchar varying
+syn keyword pgsqlType        with without
+syn keyword pgsqlType        xml xid
 syn keyword pgsqlType        zone
 
 syn region pgsqlType		 start="float\W" end="."me=s-1
