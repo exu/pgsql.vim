@@ -1,10 +1,10 @@
 " Vim syntax file
-" Language:     pgsql
-" Maintainer:   Devrim GUNDUZ <devrim@PostgreSQL.org>
-" Last Change:  $Date: 2010/03/11 21:43:23 $
-" Filenames:    *.pgsql *.plpgsql
-" URL:		http://www.gunduz.org/postgresql/pgsql.vim
-" Note:		The definitions below are for PostgreSQL 8.4, some versions may differ.
+" Language:		pgsql
+" Maintainer:	Devrim GUNDUZ <devrim@PostgreSQL.org>
+" Last Change:	$Date: 2010/03/11 21:43:23 $
+" Filenames:	*.pgsql *.plpgsql
+" URL:			http://www.gunduz.org/postgresql/pgsql.vim
+" Note:			The definitions below are for PostgreSQL 8.4, some versions may differ.
 " Changelog:	Thanks to Todd A. Cook for the updates
 " Changelog:	Thanks a lot to David Fetter for the big update set, that came as of Mar 11, 2010.
 
@@ -19,6 +19,9 @@ endif
 " Always ignore case
 syn case ignore
 
+" Section: Syntax {{{1
+
+" Section: Miscellaneous {{{2
 " General keywords which don't fall into other categories
 syn keyword pgsqlKeyword	 abort alter after aggregate analyze and as alias add
 syn keyword pgsqlKeyword	 begin by before
@@ -48,16 +51,17 @@ syn keyword pgsqlKeyword	 update unique unlisten using
 syn keyword pgsqlKeyword	 verbose view values varying vacuum
 syn keyword pgsqlKeyword	 where with
 
-" Begin
-
+" Section: Special {{{2
 " Special values
 syn keyword pgsqlSpecial	 false null true
 
+" Section: Strings {{{2
 " Strings (single- and double-quote)
 syn region pgsqlString		 start=+"+  skip=+\\\\\|\\"+  end=+"+
 syn region pgsqlString		 start=+'+  skip=+\\\\\|\\'+  end=+'+
 syn region pgsqlString		 start=+\$\z(\w*\)\$+  end=+\$\z1\$+
 
+" Section: Numbers {{{2
 " Numbers and hexidecimal values
 syn match pgsqlNumber		 "-\=\<[0-9]*\>"
 syn match pgsqlNumber		 "-\=\<[0-9]*\.[0-9]*\>"
@@ -65,17 +69,18 @@ syn match pgsqlNumber		 "-\=\<[0-9]*e[+-]\=[0-9]*\>"
 syn match pgsqlNumber		 "-\=\<[0-9]*\.[0-9]*e[+-]\=[0-9]*\>"
 syn match pgsqlNumber		 "\<0x[abcdefABCDEF0-9]*\>"
 
-" User variables
-syn match pgsqlVariable		 "@\a*[A-Za-z0-9]*[._]*[A-Za-z0-9]*"
-
+" Section: Comments {{{2
 " Comments (c-style, pgsql-style and modified sql-style)
 syn region pgsqlComment		 start="/\*"  end="\*/"
 syn match pgsqlComment		 "#.*"
 syn match pgsqlComment		 "--.*"
 syn sync ccomment pgsqlComment
 
-" Column types
+" Section: Variables {{{2
+" User variables
+syn match pgsqlVariable		 "@\a*[A-Za-z0-9]*[._]*[A-Za-z0-9]*"
 
+" Section: Column types {{{3
 syn keyword pgsqlType        anyarray anyelement abstime anyenum
 syn keyword pgsqlType        anynonarray any aclitem
 syn keyword pgsqlType        bytea bigserial bit boolean bigint box
@@ -104,6 +109,7 @@ syn keyword pgsqlType        with without
 syn keyword pgsqlType        xml xid
 syn keyword pgsqlType        zone
 
+" Section: Variable types {{{3
 syn region pgsqlType		 start="float\W" end="."me=s-1
 syn region pgsqlType		 start="float$" end="."me=s-1
 syn region pgsqlType		 start="float(" end=")" contains=pgsqlNumber,pgsqlVariable
@@ -131,20 +137,21 @@ syn region pgsqlType		 start="^varchar(" end=")" contains=pgsqlNumber,pgsqlVaria
 syn region pgsqlType		 start="\Wset(" end=")" contains=pgsqlString,pgsqlVariable
 syn region pgsqlType		 start="^set(" end=")" contains=pgsqlString,pgsqlVariable
 
+" Section: Operators {{{1
 " Logical, string and  numeric operators
 syn keyword pgsqlOperator	 between not and or is in like regexp rlike binary exists
 syn region pgsqlOperator	 start="isnull(" end=")" contains=ALL
 syn region pgsqlOperator	 start="coalesce(" end=")" contains=ALL
 syn region pgsqlOperator	 start="interval(" end=")" contains=ALL
 
-" Control flow functions
+" Section: Functions {{{1
+" Control flow functions {{{2
 syn keyword pgsqlFlow		 case when then else end
 syn region pgsqlFlow		 start="ifnull("   end=")"  contains=ALL
 syn region pgsqlFlow		 start="nullif("   end=")"  contains=ALL
 syn region pgsqlFlow		 start="if("	   end=")"  contains=ALL
 
-" General Functions
-"
+" General Functions {{{2
 syn region pgsqlFunction	start="abbrev'(" end=")" contains=ALL
 syn region pgsqlFunction	start="abs'(" end=")" contains=ALL
 syn region pgsqlFunction	start="abstime'(" end=")" contains=ALL
@@ -2014,6 +2021,7 @@ syn region pgsqlFunction	start="xml_send'(" end=")" contains=ALL
 syn region pgsqlFunction	start="xmlvalidate'(" end=")" contains=ALL
 syn region pgsqlFunction	start="xpath'(" end=")" contains=ALL
 
+" Section: Definition {{{1
 " Define the default highlighting.
 " For version 5.7 and earlier: only when not done already
 " For version 5.8 and later: only when an item doesn't have highlighting yet
@@ -2025,18 +2033,21 @@ if version >= 508 || !exists("did_pgsql_syn_inits")
     command -nargs=+ HiLink hi def link <args>
   endif
 
-  HiLink pgsqlKeyword		 Statement
-  HiLink pgsqlSpecial		 Special
-  HiLink pgsqlString		 String
-  HiLink pgsqlNumber		 Number
-  HiLink pgsqlVariable		 Identifier
-  HiLink pgsqlComment		 Comment
-  HiLink pgsqlType		 Type
-  HiLink pgsqlOperator		 Statement
-  HiLink pgsqlFlow		 Statement
-  HiLink pgsqlFunction		 Function
-  HiLink pgsqlCreate		 CREATE
+  HiLink pgsqlKeyword		Statement
+  HiLink pgsqlSpecial		Special
+  HiLink pgsqlString		String
+  HiLink pgsqlNumber		Number
+  HiLink pgsqlVariable		Identifier
+  HiLink pgsqlComment		Comment
+  HiLink pgsqlType			Type
+  HiLink pgsqlOperator		Statement
+  HiLink pgsqlFlow			Statement
+  HiLink pgsqlFunction		Function
+  HiLink pgsqlCreate		CREATE
   delcommand HiLink
 endif
 
 let b:current_syntax = "pgsql"
+
+" Section: Modelines {{{1
+" vim600: set foldmethod=marker foldlevel=0 :
