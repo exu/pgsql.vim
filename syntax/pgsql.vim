@@ -19,7 +19,7 @@ endif
 " Always ignore case
 syn case ignore
 
-" General keywords which don't fall into other categories
+" General keywords which don't fall into other categories {{{1
 syn keyword pgsqlKeyword	 abort alter after aggregate analyze and as alias add
 syn keyword pgsqlKeyword	 begin by before
 syn keyword pgsqlKeyword	 conversion cascade current_date current_time current_timestamp class close
@@ -48,34 +48,39 @@ syn keyword pgsqlKeyword	 update unique unlisten using
 syn keyword pgsqlKeyword	 verbose view values varying vacuum
 syn keyword pgsqlKeyword	 where with
 
+" }}}
 " Begin
 
-" Special values
+" Special values {{{1
 syn keyword pgsqlSpecial	 false null true
+" }}}
 
-" Strings (single- and double-quote)
+" Strings (single- and double-quote) {{{1
 syn region pgsqlString		 start=+"+  skip=+\\\\\|\\"+  end=+"+
 syn region pgsqlString		 start=+'+  skip=+\\\\\|\\'+  end=+'+
 syn region pgsqlString		 start=+\$\z(\w*\)\$+  end=+\$\z1\$+
+" }}}
 
-" Numbers and hexidecimal values
+" Numbers and hexidecimal values {{{1
 syn match pgsqlNumber		 "-\=\<[0-9]*\>"
 syn match pgsqlNumber		 "-\=\<[0-9]*\.[0-9]*\>"
 syn match pgsqlNumber		 "-\=\<[0-9]*e[+-]\=[0-9]*\>"
 syn match pgsqlNumber		 "-\=\<[0-9]*\.[0-9]*e[+-]\=[0-9]*\>"
 syn match pgsqlNumber		 "\<0x[abcdefABCDEF0-9]*\>"
+" }}}
 
-" User variables
+" User variables {{{1
 syn match pgsqlVariable		 "@\a*[A-Za-z0-9]*[._]*[A-Za-z0-9]*"
+" }}}
 
-" Comments (c-style, pgsql-style and modified sql-style)
+" Comments (c-style, pgsql-style and modified sql-style) {{{1
 syn region pgsqlComment		 start="/\*"  end="\*/"
 syn match pgsqlComment		 "#.*"
 syn match pgsqlComment		 "--.*"
 syn sync ccomment pgsqlComment
+" }}}
 
-" Column types
-
+" Column types {{{1
 syn keyword pgsqlType        anyarray anyelement abstime anyenum
 syn keyword pgsqlType        anynonarray any aclitem
 syn keyword pgsqlType        bytea bigserial bit boolean bigint box
@@ -130,22 +135,24 @@ syn region pgsqlType		 start="^char(" end=")" contains=pgsqlNumber,pgsqlVariable
 syn region pgsqlType		 start="^varchar(" end=")" contains=pgsqlNumber,pgsqlVariable
 syn region pgsqlType		 start="\Wset(" end=")" contains=pgsqlString,pgsqlVariable
 syn region pgsqlType		 start="^set(" end=")" contains=pgsqlString,pgsqlVariable
+" }}}
 
-" Logical, string and  numeric operators
+" Logical, string and  numeric operators {{{1
 " TODO: terms contained within the function are not keywords! --Ryan Delaney 2014-02-06T14:11-0800 OpenGPG: 0D98863B4E1D07B6
 syn keyword pgsqlOperator	 between not and or is in like regexp rlike binary exists
 syn region pgsqlOperator	 start="isnull(" end=")" contains=ALL
 syn region pgsqlOperator	 start="coalesce(" end=")" contains=ALL
 syn region pgsqlOperator	 start="interval(" end=")" contains=ALL
+" }}}
 
-" Control flow functions
+" Control flow functions {{{1
 syn keyword pgsqlFlow		 case when then else end
 syn region pgsqlFlow		 start="ifnull("   end=")"  contains=ALL
 syn region pgsqlFlow		 start="nullif("   end=")"  contains=ALL
 syn region pgsqlFlow		 start="if("	   end=")"  contains=ALL
+" }}}
 
-" General Functions
-"
+" General Functions {{{1
 syn region pgsqlFunction	start="abbrev'(" end=")" contains=ALL
 syn region pgsqlFunction	start="abs'(" end=")" contains=ALL
 syn region pgsqlFunction	start="abstime'(" end=")" contains=ALL
@@ -2014,8 +2021,9 @@ syn region pgsqlFunction	start="xml_recv'(" end=")" contains=ALL
 syn region pgsqlFunction	start="xml_send'(" end=")" contains=ALL
 syn region pgsqlFunction	start="xmlvalidate'(" end=")" contains=ALL
 syn region pgsqlFunction	start="xpath'(" end=")" contains=ALL
+" }}}
 
-" Define the default highlighting.
+" Define the default highlighting. {{{1
 " For version 5.7 and earlier: only when not done already
 " For version 5.8 and later: only when an item doesn't have highlighting yet
 if version >= 508 || !exists("did_pgsql_syn_inits")
@@ -2039,5 +2047,8 @@ if version >= 508 || !exists("did_pgsql_syn_inits")
   HiLink pgsqlCreate		 CREATE
   delcommand HiLink
 endif
+" }}}
 
 let b:current_syntax = "pgsql"
+
+" vim: ft=vim
