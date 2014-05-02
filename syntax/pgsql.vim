@@ -24,7 +24,7 @@ syn keyword pgsqlKeyword	 abort alter after aggregate analyze and as alias add
 syn keyword pgsqlKeyword	 begin by before
 syn keyword pgsqlKeyword	 conversion cascade current_date current_time current_timestamp class close
 syn keyword pgsqlKeyword	 cluster checkpoint check comment
-syn keyword pgsqlKeyword	 cast character check column columns constraint create copy
+syn keyword pgsqlKeyword	 cast character check commit column columns constraint create copy
 syn keyword pgsqlKeyword	 database domain databases default delete distinct drop declare deallocate desc
 syn keyword pgsqlKeyword	 deferrable deferred defaults do diagnostics
 syn keyword pgsqlKeyword	 explain elsif end exists execute exclusion found exception except each exit
