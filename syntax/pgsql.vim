@@ -3,8 +3,8 @@
 " Maintainer:   Devrim GUNDUZ <devrim@PostgreSQL.org>
 " Last Change:  $Date: 2010/03/11 21:43:23 $
 " Filenames:    *.pgsql *.plpgsql
-" URL:		http://www.gunduz.org/postgresql/pgsql.vim
-" Note:		The definitions below are for PostgreSQL 8.4, some versions may differ.
+" URL:			http://www.gunduz.org/postgresql/pgsql.vim
+" Note:			The definitions below are for PostgreSQL 8.4, some versions may differ.
 " Changelog:	Thanks to Todd A. Cook for the updates
 " Changelog:	Thanks a lot to David Fetter for the big update set, that came as of Mar 11, 2010.
 
@@ -132,6 +132,7 @@ syn region pgsqlType		 start="\Wset(" end=")" contains=pgsqlString,pgsqlVariable
 syn region pgsqlType		 start="^set(" end=")" contains=pgsqlString,pgsqlVariable
 
 " Logical, string and  numeric operators
+" TODO: terms contained within the function are not keywords! --Ryan Delaney 2014-02-06T14:11-0800 OpenGPG: 0D98863B4E1D07B6
 syn keyword pgsqlOperator	 between not and or is in like regexp rlike binary exists
 syn region pgsqlOperator	 start="isnull(" end=")" contains=ALL
 syn region pgsqlOperator	 start="coalesce(" end=")" contains=ALL
@@ -2031,9 +2032,9 @@ if version >= 508 || !exists("did_pgsql_syn_inits")
   HiLink pgsqlNumber		 Number
   HiLink pgsqlVariable		 Identifier
   HiLink pgsqlComment		 Comment
-  HiLink pgsqlType		 Type
+  HiLink pgsqlType		 	 Type
   HiLink pgsqlOperator		 Statement
-  HiLink pgsqlFlow		 Statement
+  HiLink pgsqlFlow		 	 Statement
   HiLink pgsqlFunction		 Function
   HiLink pgsqlCreate		 CREATE
   delcommand HiLink
