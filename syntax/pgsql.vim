@@ -1,7 +1,8 @@
 " Vim syntax file
 " Language:     pgsql
 " Maintainer:   Devrim GUNDUZ <devrim@PostgreSQL.org>
-" Last Change:  $Date: 2010/03/11 21:43:23 $
+" Contributors: Jacek Wysocki, Ryan Delaney <ryan.delaney@gmail.com>
+" Last Change:  $Fri May 23 09:55:21 PDT 2014$
 " Filenames:    *.pgsql *.plpgsql
 " URL:			http://www.gunduz.org/postgresql/pgsql.vim
 " Note:			The definitions below are for PostgreSQL 8.4, some versions may differ.
