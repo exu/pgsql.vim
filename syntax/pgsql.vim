@@ -45,16 +45,17 @@ syn keyword pgsqlKeyword	 notify no new next
 syn keyword pgsqlKeyword	 or operator outer order old on out open owned owner
 syn keyword pgsqlKeyword	 prepare plpgsql primary password primary privilege procedure partial prepared
 syn keyword pgsqlKeyword	 partition preserve perform
-syn keyword pgsqlKeyword	 role replace reindex release reset revoke rollback references row rows rowtype rule restrict
+syn keyword pgsqlKeyword	 role replace reindex release reset revoke rollback references row rows rule restrict
 syn keyword pgsqlKeyword	 returns return
 syn keyword pgsqlKeyword	 select set strict schema sequence sequences savepoint simple system stable setof
-syn keyword pgsqlKeyword	 truncate to tranaction trigger table tables temp temporary tablespace type
+syn keyword pgsqlKeyword	 truncate to tranaction trigger table tables temp temporary tablespace
 syn keyword pgsqlKeyword	 update unique union unlisten user using
 syn keyword pgsqlKeyword	 verbose view values vacuum volatile
 syn keyword pgsqlKeyword	 where
 " Use match instead of keyword to lower priority and allow data types bits to
 " match too
 syn match   pgsqlKeyword	 "\<to\>"
+syn match   pgsqlKeyword	 "\<\(row\)\?type\>"
 syn match   pgsqlKeyword	 "\<with\>"
 
 " Section: Constants {{{2
@@ -120,6 +121,8 @@ syn keyword pgsqlType        tsvector txid_snapshot
 syn keyword pgsqlType        unknown uuid
 syn keyword pgsqlType        void varchar
 syn keyword pgsqlType        xml xid
+" %rowtype, %type PL/pgSQL constructs
+syn match pgsqlType          "%\(row\)\?type\>"
 " this should actually be the end of a region
 syn match pgsqlType          "\<with\(out\)\?\s\+time\s\+zone\>"
 

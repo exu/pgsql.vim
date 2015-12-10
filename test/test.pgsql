@@ -77,6 +77,8 @@ xml
 
 json jsonb
 
+foo%rowtype
+bar%type
 
 -- false positive types
 int5
@@ -91,6 +93,9 @@ varying
 interval year to hour
 interval minute (10)
 interval second to second (10)
+
+rowtype
+type
 
 -- constants
 null
