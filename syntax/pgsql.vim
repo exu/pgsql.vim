@@ -40,7 +40,7 @@ syn keyword pgsqlKeyword	 index into immutable inner initially immediate inherit
 syn keyword pgsqlKeyword	 join
 syn keyword pgsqlKeyword	 key
 syn keyword pgsqlKeyword	 language leakproof lock local limit left load loop
-syn keyword pgsqlKeyword	 max min move match
+syn keyword pgsqlKeyword	 move match
 syn keyword pgsqlKeyword	 notify no new next
 syn keyword pgsqlKeyword	 or operator outer order old on out open owned owner
 syn keyword pgsqlKeyword	 prepare plpgsql primary password primary privilege procedure partial prepared
