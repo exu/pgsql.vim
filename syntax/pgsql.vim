@@ -106,7 +106,7 @@ syn keyword pgsqlType        internal int2vector int int2 int4 int8 integer
 syn keyword pgsqlType        json jsonb
 syn keyword pgsqlType        line lseg language_handler
 syn keyword pgsqlType        macaddr money
-syn keyword pgsqlType        numeric name
+syn keyword pgsqlType        numeric
 syn keyword pgsqlType        opaque oidvector oid
 syn keyword pgsqlType        polygon point path period
 syn keyword pgsqlType        regclass real regtype refcursor regoperator
