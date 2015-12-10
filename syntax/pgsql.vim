@@ -92,7 +92,11 @@ syn keyword pgsqlTodo       todo note xxx warn warning contained
 
 " Section: Variables {{{2
 " User variables
-syn match pgsqlVariable		 "@\a*[A-Za-z0-9]*[._]*[A-Za-z0-9]*"
+syn match pgsqlVariable		 "\$[0-9]\+"
+syn match pgsqlLabel		 "<<[^>]\+>>"
+
+" Is this a class of things or just a sort of an alien?
+syn match pgsqlExtschema		 "@extschema@"
 
 " Section: Column types {{{3
 syn keyword pgsqlType        anyarray anyelement abstime anyenum
@@ -2076,6 +2080,8 @@ if version >= 508 || !exists("did_pgsql_syn_inits")
   HiLink pgsqlOperator		Statement
   HiLink pgsqlFlow			Statement
   HiLink pgsqlFunction		Function
+  HiLink pgsqlLabel			Label
+  HiLink pgsqlExtschema		Special
   HiLink pgsqlTodo			Todo
   delcommand HiLink
 endif
