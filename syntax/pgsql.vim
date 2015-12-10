@@ -67,8 +67,12 @@ syn match   pgsqlConstant	 "\<null\>"
 
 " Section: Strings {{{2
 " Strings (single- and double-quote)
-syn region pgsqlString		 start=+"+  skip=+\\\\\|\\"+  end=+"+
+syn region pgsqlIdentifier	 start=+"+  skip=+\\\\\|\\"+  end=+"+
+syn region pgsqlIdentifier	 start=+U&"+  skip=+\\\\\|\\"+  end=+"+
+
 syn region pgsqlString		 start=+'+  skip=+\\\\\|\\'+  end=+'+
+syn region pgsqlString		 start=+U&'+  skip=+\\\\\|\\'+  end=+'+
+
 syn match pgsqlString		 "\$\w*\$"
 " }}}
 
@@ -2089,6 +2093,7 @@ if version >= 508 || !exists("did_pgsql_syn_inits")
   HiLink pgsqlLabel			Label
   HiLink pgsqlExtschema		Special
   HiLink pgsqlTodo			Todo
+  HiLink pgsqlIdentifier	Normal
   delcommand HiLink
 endif
 " }}}

@@ -113,3 +113,21 @@ array[10,20],    array [10]
 
 -- false positive constant
 not null
+
+
+-- Identifiers
+a_table_or_field
+"a table or field too"
+U&"\0441\043B\043E\043D"
+
+-- String literals
+'a string'
+U&'d\0061t\+000061'
+
+-- Numbers
+42
+3.5
+4.
+.001
+5e2
+1.925e-3
