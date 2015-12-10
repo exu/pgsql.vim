@@ -80,6 +80,9 @@ json jsonb
 foo%rowtype
 bar%type
 
+-- TODO: should be a type
+any
+
 -- false positive types
 int5
 serial7
@@ -101,6 +104,12 @@ type
 null
 true
 false
+
+-- operators
+any(x),  any (x)
+all(x),  all (x)
+array[10,20],    array [10]
+
 
 -- false positive constant
 not null

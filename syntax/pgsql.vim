@@ -100,7 +100,10 @@ syn match pgsqlExtschema		 "@extschema@"
 
 " Section: Column types {{{3
 syn keyword pgsqlType        anyarray anyelement abstime anyenum
-syn keyword pgsqlType        anynonarray any aclitem
+syn keyword pgsqlType        anynonarray aclitem
+" Would like to have this as type, but even if it's a match it fails
+" matching of the any() operator, which is more used.
+" syn match   pgsqlType        "\<any\>"
 syn keyword pgsqlType        bytea bigserial bool boolean bigint box
 syn keyword pgsqlType        cidr cstring cid circle
 syn keyword pgsqlType        date
@@ -171,9 +174,12 @@ syn region pgsqlType		 start="\<bit\s\+varying\s*(" end=")" contains=pgsqlNumber
 " TODO: terms contained within the function are not keywords! --Ryan Delaney 2014-02-06T14:11-0800 OpenGPG: 0D98863B4E1D07B6
 syn keyword pgsqlOperator	 between and or is in like regexp rlike binary exists
 syn match   pgsqlOperator	 "\<not\>"
-syn region pgsqlOperator	 start="isnull(" end=")" contains=ALL
-syn region pgsqlOperator	 start="coalesce(" end=")" contains=ALL
-syn region pgsqlOperator	 start="interval(" end=")" contains=ALL
+syn region pgsqlOperator	 start="isnull\s*(" end=")" contains=ALL
+syn region pgsqlOperator	 start="coalesce\s*(" end=")" contains=ALL
+syn region pgsqlOperator	 start="interval\s*(" end=")" contains=ALL
+syn region pgsqlOperator	 start="any\s*(" end=")" contains=ALL
+syn region pgsqlOperator	 start="all\s*(" end=")" contains=ALL
+syn region pgsqlOperator	 start="array\s*\[" end="\]" contains=ALL
 
 " Let's consider this an operator, not operator + constant
 syn match   pgsqlKeyword	 "\<not\s\+null\>"
