@@ -82,7 +82,7 @@ syn match pgsqlKeyword      "\<discard\s\+\(all\|plans\|sequences\|temp\|tempora
 syn match pgsqlKeyword      "\<\(alter\|add\|drop\|comment\s\+on\|create\)\s\+\(aggregate\|attribute\|cast\|collation\|conversion\|database\|default\s\+privileges\|domain\|\(event\s\+\)\?trigger\|extension\|foreign\s\+\(data\s\+wrapper\|table\)\|function\|group\|index\(\s\+concurrently\)\?\|\(procedural\s\+\)\?language\|materialized\s\+view\|operator\(\s\+class\|\s\+family\)\?\|owned\s\+by\|role\|rule\|schema\|sequence\|server\|table\|tablespace\|text\s\+search\s\+\(configuration\|dictionary\|parser\|template\)\|type\|user\(\s\+mapping\)\?\|view\)\>"
 
 syn match pgsqlKeyword      "\<create\s\+default\s\+conversion\>"
-syn match pgsqlKeyword      "\<create\s\+or\s\+replace\s\+\(function\|\(trusted\s\+\)\?\(procedural\s\+\)\?language\|rule\)\>"
+syn match pgsqlKeyword      "\<create\s\+\(or\s\+replace\s\+\)\?\(function\|\(trusted\s\+\)\?\(procedural\s\+\)\?language\|rule\)\>"
 syn match pgsqlKeyword      "\<create\s\+unique\s\+index\(\s\+concurrently\)\?\>"
 syn match pgsqlKeyword      "\<create\s\+temp\(orary\)\?\s\+sequence\>"
 syn match pgsqlKeyword      "\<create\s\+\(temp\(orary\)\?\|unlogged\)\s\+table\>"
