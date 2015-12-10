@@ -83,10 +83,11 @@ syn match pgsqlNumber		 "\<0x[abcdefABCDEF0-9]*\>"
 
 " Section: Comments {{{2
 " Comments (c-style, pgsql-style and modified sql-style)
-syn region pgsqlComment		 start="/\*"  end="\*/"
-syn match pgsqlComment		 "#.*"
-syn match pgsqlComment		 "--.*"
+syn region pgsqlComment		 start="/\*"  end="\*/" contains=pgsqlTodo
+syn match pgsqlComment		 "#.*" contains=pgsqlTodo
+syn match pgsqlComment		 "--.*" contains=pgsqlTodo
 syn sync ccomment pgsqlComment
+syn keyword pgsqlTodo       todo note xxx warn warning contained
 " }}}
 
 " Section: Variables {{{2
@@ -2075,7 +2076,7 @@ if version >= 508 || !exists("did_pgsql_syn_inits")
   HiLink pgsqlOperator		Statement
   HiLink pgsqlFlow			Statement
   HiLink pgsqlFunction		Function
-  HiLink pgsqlCreate		CREATE
+  HiLink pgsqlTodo			Todo
   delcommand HiLink
 endif
 " }}}
