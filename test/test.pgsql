@@ -125,6 +125,7 @@ with (format csv);
 6,sessions,session
 \.
 
+\i some psql table command
 
 -- Identifiers
 a_table_or_field

@@ -191,8 +191,10 @@ syn region pgsqlOperator	 start="array\s*\[" end="\]" contains=ALL
 syn match   pgsqlKeyword	 "\<not\s\+null\>"
 " }}}
 
-" Section: Copy {{{1
+" Section: psql special stuff {{{1
 syn region pgsqlCopy    start="\<copy\([^;]\|\n\)\+from\s\+stdin\([^;]\|\n\)*;" end="\\\."
+" TODO: the content would be nice "Normal", not "Special"
+syn region pgsqlBackslash	 start="^\\" end="$"
 " }}}
 "
 " Section: Functions {{{1
@@ -2101,6 +2103,7 @@ if version >= 508 || !exists("did_pgsql_syn_inits")
   HiLink pgsqlTodo			Todo
   HiLink pgsqlIdentifier	Normal
   HiLink pgsqlCopy			Normal
+  HiLink pgsqlBackslash		Special
   delcommand HiLink
 endif
 " }}}
