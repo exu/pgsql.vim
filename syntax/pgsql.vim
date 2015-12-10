@@ -29,7 +29,7 @@ syn keyword pgsqlKeyword	 abort alter after aggregate analyze and as alias add
 syn keyword pgsqlKeyword	 begin by before
 syn keyword pgsqlKeyword	 conversion cascade current_date current_time current_timestamp class close
 syn keyword pgsqlKeyword	 cluster checkpoint check comment
-syn keyword pgsqlKeyword	 cast character check commit column columns constraint create copy
+syn keyword pgsqlKeyword	 cast check commit column columns constraint create copy
 syn keyword pgsqlKeyword	 database domain databases default delete distinct drop declare deallocate desc
 syn keyword pgsqlKeyword	 deferrable deferred defaults do diagnostics
 syn keyword pgsqlKeyword	 explain elsif end exists execute exclusion found exception except each exit
@@ -50,8 +50,12 @@ syn keyword pgsqlKeyword	 returns return
 syn keyword pgsqlKeyword	 select set strict schema sequence savepoint simple system stable setof
 syn keyword pgsqlKeyword	 truncate to tranaction trigger table tables temp temporary tablespace type
 syn keyword pgsqlKeyword	 update unique union unlisten using
-syn keyword pgsqlKeyword	 verbose view values varying vacuum volatile
-syn keyword pgsqlKeyword	 where with
+syn keyword pgsqlKeyword	 verbose view values vacuum volatile
+syn keyword pgsqlKeyword	 where
+" Use match instead of keyword to lower priority and allow data types bits to
+" match too
+syn match   pgsqlKeyword	 "\<to\>"
+syn match   pgsqlKeyword	 "\<with\>"
 
 " Section: Special {{{2
 " Special values
@@ -89,59 +93,67 @@ syn match pgsqlVariable		 "@\a*[A-Za-z0-9]*[._]*[A-Za-z0-9]*"
 " Section: Column types {{{3
 syn keyword pgsqlType        anyarray anyelement abstime anyenum
 syn keyword pgsqlType        anynonarray any aclitem
-syn keyword pgsqlType        bytea bigserial bit boolean bigint box
-syn keyword pgsqlType        cidr cstring char character cid circle
-syn keyword pgsqlType        decimal double date
+syn keyword pgsqlType        bytea bigserial bool boolean bigint box
+syn keyword pgsqlType        cidr cstring cid circle
+syn keyword pgsqlType        date
 syn keyword pgsqlType        enum
 syn keyword pgsqlType        gtsvector
 syn keyword pgsqlType        hstore
-syn keyword pgsqlType        inet interval
-syn keyword pgsqlType        internal int2vector int integer
+syn keyword pgsqlType        inet
+syn keyword pgsqlType        internal int2vector int int2 int4 int8 integer
+syn keyword pgsqlType        json jsonb
 syn keyword pgsqlType        line lseg language_handler
 syn keyword pgsqlType        macaddr money
 syn keyword pgsqlType        numeric name
 syn keyword pgsqlType        opaque oidvector oid
-syn keyword pgsqlType        polygon point path period precision
+syn keyword pgsqlType        polygon point path period
 syn keyword pgsqlType        regclass real regtype refcursor regoperator
 syn keyword pgsqlType        reltime record regproc regdictionary regoper
 syn keyword pgsqlType        regprocedure regconfig
 syn keyword pgsqlType        smgr smallint serial smallserial
-syn keyword pgsqlType        time tsquery tinterval
-syn keyword pgsqlType        trigger tid timestamp timestamptz text
+syn keyword pgsqlType        serial2 serial4 serial8
+syn keyword pgsqlType        tsquery tinterval
+syn keyword pgsqlType        trigger tid text
 syn keyword pgsqlType        tsvector txid_snapshot
 syn keyword pgsqlType        unknown uuid
-syn keyword pgsqlType        void varchar varying
-syn keyword pgsqlType        with without
+syn keyword pgsqlType        void varchar
 syn keyword pgsqlType        xml xid
-syn keyword pgsqlType        zone
+" this should actually be the end of a region
+syn match pgsqlType          "\<with\(out\)\?\s\+time\s\+zone\>"
 
 " Section: Variable types {{{3
-syn region pgsqlType		 start="float\W" end="."me=s-1
-syn region pgsqlType		 start="float$" end="."me=s-1
-syn region pgsqlType		 start="float(" end=")" contains=pgsqlNumber,pgsqlVariable
-syn region pgsqlType		 start="double\W" end="."me=s-1
-syn region pgsqlType		 start="double$" end="."me=s-1
-syn region pgsqlType		 start="double(" end=")" contains=pgsqlNumber,pgsqlVariable
-syn region pgsqlType		 start="double precision\W" end="."me=s-1
-syn region pgsqlType		 start="double precision$" end="."me=s-1
-syn region pgsqlType		 start="double precision(" end=")" contains=pgsqlNumber,pgsqlVariable
-syn region pgsqlType		 start="real\W" end="."me=s-1
-syn region pgsqlType		 start="real$" end="."me=s-1
-syn region pgsqlType		 start="real(" end=")" contains=pgsqlNumber,pgsqlVariable
-syn region pgsqlType		 start="numeric(" end=")" contains=pgsqlNumber,pgsqlVariable
-syn region pgsqlType		 start="decimal(" end=")" contains=pgsqlNumber,pgsqlVariable
-syn region pgsqlType		 start="\Wtimestamp\W" end="."me=s-1
-syn region pgsqlType		 start="\Wtimestamp$" end="."me=s-1
-syn region pgsqlType		 start="\Wtimestamp(" end=")" contains=pgsqlNumber,pgsqlVariable
-syn region pgsqlType		 start="^timestamp\W" end="."me=s-1
-syn region pgsqlType		 start="^timestamp$" end="."me=s-1
-syn region pgsqlType		 start="^timestamp(" end=")" contains=pgsqlNumber,pgsqlVariable
-syn region pgsqlType		 start="\Wyear(" end=")" contains=pgsqlNumber,pgsqlVariable
-syn region pgsqlType		 start="^year(" end=")" contains=pgsqlNumber,pgsqlVariable
-syn region pgsqlType		 start="^char(" end=")" contains=pgsqlNumber,pgsqlVariable
-syn region pgsqlType		 start="^varchar(" end=")" contains=pgsqlNumber,pgsqlVariable
-syn region pgsqlType		 start="\Wset(" end=")" contains=pgsqlString,pgsqlVariable
-syn region pgsqlType		 start="^set(" end=")" contains=pgsqlString,pgsqlVariable
+syn match  pgsqlType		 "\<float\>"
+syn region pgsqlType		 start="\<float\s*(" end=")" contains=pgsqlNumber,pgsqlVariable
+syn match  pgsqlType		 "\<double\s\+precision\>"
+syn region pgsqlType		 start="\<double\s\+precision\s*(" end=")" contains=pgsqlNumber,pgsqlVariable
+syn match  pgsqlType		 "\<numeric\>"
+syn region pgsqlType		 start="\<numeric\s*(" end=")" contains=pgsqlNumber,pgsqlVariable
+syn match  pgsqlType		 "\<decimal\>"
+syn region pgsqlType		 start="\<decimal\s*(" end=")" contains=pgsqlNumber,pgsqlVariable
+syn match  pgsqlType		 "\<time\(stamp\(tz\)\?\)\?\>"
+syn region pgsqlType		 start="\<time\(stamp\(tz\)\?\)\?\s*(" end=")" contains=pgsqlNumber,pgsqlVariable
+syn match  pgsqlType		 "\<interval\>"
+syn region pgsqlType		 start="\<interval\s*(" end=")" contains=pgsqlNumber,pgsqlVariable
+syn match  pgsqlType		 "\<interval\s\+\(year\|month\|day\|hour\|minute\|second\)\>"
+syn match  pgsqlType		 "\<interval\s\+year\s\+to\s\+month\>"
+syn match  pgsqlType		 "\<interval\s\+day\s\+to\s\+\(hour\|minute\|second\)\>"
+syn match  pgsqlType		 "\<interval\s\+hour\s\+to\s\+\(minute\|second\)\>"
+syn match  pgsqlType		 "\<interval\s\+minute\s\+to\s\+second\>"
+syn region pgsqlType		 start="\<interval\s\+\(\(day\|hour\|minute\)\s\+to\s\+\)\?second\s*(" end=")" contains=pgsqlNumber,pgsqlVariable
+syn match  pgsqlType		 "\<char\>"
+syn region pgsqlType		 start="\<char\s*(" end=")" contains=pgsqlNumber,pgsqlVariable
+syn match  pgsqlType		 "\<character\>"
+syn region pgsqlType		 start="\<character\s*(" end=")" contains=pgsqlNumber,pgsqlVariable
+syn match  pgsqlType		 "\<varchar\>"
+syn region pgsqlType		 start="\<varchar\s*(" end=")" contains=pgsqlNumber,pgsqlVariable
+syn match  pgsqlType		 "\<character\s\+varying\>"
+syn region pgsqlType		 start="\<character\s\+varying\s*(" end=")" contains=pgsqlNumber,pgsqlVariable
+syn match  pgsqlType		 "\<bit\>"
+syn region pgsqlType		 start="\<bit\s*(" end=")" contains=pgsqlNumber,pgsqlVariable
+syn match  pgsqlType		 "\<varbit\>"
+syn region pgsqlType		 start="\<varbit\s*(" end=")" contains=pgsqlNumber,pgsqlVariable
+syn match  pgsqlType		 "\<bit\s\+varying\>"
+syn region pgsqlType		 start="\<bit\s\+varying\s*(" end=")" contains=pgsqlNumber,pgsqlVariable
 " }}}
 
 " Section: Operators {{{1
