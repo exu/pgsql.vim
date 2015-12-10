@@ -32,7 +32,7 @@ syn keyword pgsqlKeyword	 cluster checkpoint check comment
 syn keyword pgsqlKeyword	 cast check commit column columns constraint create copy
 syn keyword pgsqlKeyword	 database domain databases default delete distinct drop declare deallocate desc
 syn keyword pgsqlKeyword	 deferrable deferred defaults do diagnostics
-syn keyword pgsqlKeyword	 explain elsif end exists execute exclusion found exception except each exit
+syn keyword pgsqlKeyword	 explain elsif end exists execute exclusion found exception except each exit extension
 syn keyword pgsqlKeyword	 function foreign from full fetch force for
 syn keyword pgsqlKeyword	 group grant global get
 syn keyword pgsqlKeyword	 having
@@ -47,9 +47,9 @@ syn keyword pgsqlKeyword	 prepare plpgsql primary password primary privilege pro
 syn keyword pgsqlKeyword	 partition preserve perform
 syn keyword pgsqlKeyword	 role replace reindex release reset revoke rollback references row rows rowtype rule restrict
 syn keyword pgsqlKeyword	 returns return
-syn keyword pgsqlKeyword	 select set strict schema sequence savepoint simple system stable setof
+syn keyword pgsqlKeyword	 select set strict schema sequence sequences savepoint simple system stable setof
 syn keyword pgsqlKeyword	 truncate to tranaction trigger table tables temp temporary tablespace type
-syn keyword pgsqlKeyword	 update unique union unlisten using
+syn keyword pgsqlKeyword	 update unique union unlisten user using
 syn keyword pgsqlKeyword	 verbose view values vacuum volatile
 syn keyword pgsqlKeyword	 where
 " Use match instead of keyword to lower priority and allow data types bits to
