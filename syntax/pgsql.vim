@@ -41,7 +41,7 @@ syn keyword pgsqlKeyword	 join
 syn keyword pgsqlKeyword	 key
 syn keyword pgsqlKeyword	 language leakproof lock local limit left load loop
 syn keyword pgsqlKeyword	 max min move match
-syn keyword pgsqlKeyword	 notify no new null next
+syn keyword pgsqlKeyword	 notify no new next
 syn keyword pgsqlKeyword	 or operator outer order old on out open owned owner
 syn keyword pgsqlKeyword	 prepare plpgsql primary password primary privilege procedure partial prepared
 syn keyword pgsqlKeyword	 partition preserve perform
@@ -57,9 +57,11 @@ syn keyword pgsqlKeyword	 where
 syn match   pgsqlKeyword	 "\<to\>"
 syn match   pgsqlKeyword	 "\<with\>"
 
-" Section: Special {{{2
-" Special values
-syn keyword pgsqlSpecial	 false null true
+" Section: Constants {{{2
+" Constant values
+syn keyword pgsqlConstant	 false true
+" weakened to allow matching 'not null'
+syn match   pgsqlConstant	 "\<null\>"
 " }}}
 
 " Section: Strings {{{2
@@ -159,10 +161,14 @@ syn region pgsqlType		 start="\<bit\s\+varying\s*(" end=")" contains=pgsqlNumber
 " Section: Operators {{{1
 " Logical, string and  numeric operators
 " TODO: terms contained within the function are not keywords! --Ryan Delaney 2014-02-06T14:11-0800 OpenGPG: 0D98863B4E1D07B6
-syn keyword pgsqlOperator	 between not and or is in like regexp rlike binary exists
+syn keyword pgsqlOperator	 between and or is in like regexp rlike binary exists
+syn match   pgsqlOperator	 "\<not\>"
 syn region pgsqlOperator	 start="isnull(" end=")" contains=ALL
 syn region pgsqlOperator	 start="coalesce(" end=")" contains=ALL
 syn region pgsqlOperator	 start="interval(" end=")" contains=ALL
+
+" Let's consider this an operator, not operator + constant
+syn match   pgsqlKeyword	 "\<not\s\+null\>"
 " }}}
 
 " Section: Functions {{{1
@@ -2057,7 +2063,7 @@ if version >= 508 || !exists("did_pgsql_syn_inits")
   endif
 
   HiLink pgsqlKeyword		Statement
-  HiLink pgsqlSpecial		Special
+  HiLink pgsqlConstant		Constant
   HiLink pgsqlString		String
   HiLink pgsqlNumber		Number
   HiLink pgsqlVariable		Identifier
