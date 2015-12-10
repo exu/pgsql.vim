@@ -110,9 +110,20 @@ any(x),  any (x)
 all(x),  all (x)
 array[10,20],    array [10]
 
-
 -- false positive constant
 not null
+
+
+-- Copy support
+copy django_content_type (id, app_label, model) from stdin
+with (format csv);
+1,admin,logentry
+2,auth,permission
+3,auth,group
+4,auth,user
+5,contenttypes,contenttype
+6,sessions,session
+\.
 
 
 -- Identifiers

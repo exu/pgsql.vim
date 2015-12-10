@@ -29,11 +29,11 @@ syn keyword pgsqlKeyword	 abort alter after aggregate analyze and as alias add
 syn keyword pgsqlKeyword	 begin by before
 syn keyword pgsqlKeyword	 conversion cascade current_date current_time current_timestamp class close
 syn keyword pgsqlKeyword	 cluster checkpoint check comment
-syn keyword pgsqlKeyword	 cast check commit column columns constraint create copy
+syn keyword pgsqlKeyword	 cast check commit column columns constraint create
 syn keyword pgsqlKeyword	 database domain databases default delete distinct drop declare deallocate desc
 syn keyword pgsqlKeyword	 deferrable deferred defaults do diagnostics
 syn keyword pgsqlKeyword	 explain elsif end exists execute exclusion found exception except each exit extension
-syn keyword pgsqlKeyword	 function foreign from full fetch force for
+syn keyword pgsqlKeyword	 function foreign full fetch force for
 syn keyword pgsqlKeyword	 group grant global get
 syn keyword pgsqlKeyword	 having
 syn keyword pgsqlKeyword	 index into immutable inner initially immediate inherits instead insert in if intersect
@@ -54,6 +54,8 @@ syn keyword pgsqlKeyword	 verbose view values vacuum volatile
 syn keyword pgsqlKeyword	 where
 " Use match instead of keyword to lower priority and allow data types bits to
 " match too
+syn match   pgsqlKeyword	 "\<copy\>"
+syn match   pgsqlKeyword	 "\<from\>"
 syn match   pgsqlKeyword	 "\<to\>"
 syn match   pgsqlKeyword	 "\<\(row\)\?type\>"
 syn match   pgsqlKeyword	 "\<with\>"
@@ -189,6 +191,10 @@ syn region pgsqlOperator	 start="array\s*\[" end="\]" contains=ALL
 syn match   pgsqlKeyword	 "\<not\s\+null\>"
 " }}}
 
+" Section: Copy {{{1
+syn region pgsqlCopy    start="\<copy\([^;]\|\n\)\+from\s\+stdin\([^;]\|\n\)*;" end="\\\."
+" }}}
+"
 " Section: Functions {{{1
 " Control flow functions {{{2
 syn keyword pgsqlFlow		 case when then else end
@@ -2094,6 +2100,7 @@ if version >= 508 || !exists("did_pgsql_syn_inits")
   HiLink pgsqlExtschema		Special
   HiLink pgsqlTodo			Todo
   HiLink pgsqlIdentifier	Normal
+  HiLink pgsqlCopy			Normal
   delcommand HiLink
 endif
 " }}}
