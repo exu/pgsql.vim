@@ -240,11 +240,10 @@ syn match pgsqlNumber		 "\<0x[abcdefABCDEF0-9]*\>"
 " }}}
 
 " Section: Comments {{{2
-" Comments (c-style, pgsql-style and modified sql-style)
-syn region pgsqlComment		 start="/\*"  end="\*/" contains=pgsqlTodo
-syn match pgsqlComment		 "#.*" contains=pgsqlTodo
-syn match pgsqlComment		 "--.*" contains=pgsqlTodo
-syn sync ccomment pgsqlComment
+" Comments (c-style, sql-style)
+syn region  pgsqlComment    start="/\*"  end="\*/" contains=pgsqlTodo,pgsqlComment
+syn match   pgsqlComment    "--.*" contains=pgsqlTodo
+syn sync    ccomment        pgsqlComment
 syn keyword pgsqlTodo       todo note xxx warn warning contained
 " }}}
 
@@ -352,7 +351,7 @@ syn region pgsqlCopy    start="\<copy\([^;]\|\n\)\+from\s\+stdin\([^;]\|\n\)*;" 
 " TODO: the content would be nice "Normal", not "Special"
 syn region pgsqlBackslash	 start="^\\" end="$"
 " }}}
-"
+
 " Section: Functions {{{1
 " Control flow functions {{{2
 syn keyword pgsqlFlow		 case when then else end

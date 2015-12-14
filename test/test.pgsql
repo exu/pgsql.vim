@@ -1,5 +1,20 @@
 -- vim: set filetype=pgsql:
 
+-- Comments
+
+/* This is a comment
+  /* actually, a nested comment */
+  select -- this must be not a keyword
+*/
+select -- this must be a keyword
+
+// this is not a comment
+# neither is this
+
+/* XXX to-do marker */
+-- XXX to-do marker */
+
+
 -- data types
 smallint    int2
 integer     int     int4
