@@ -200,8 +200,8 @@ syn keyword pgsqlKeyword	 group global get
 syn keyword pgsqlKeyword	 having
 syn keyword pgsqlKeyword	 immutable inherits inline intersect
 syn keyword pgsqlKeyword	 leakproof lock local limit load loop listen lateral
-syn keyword pgsqlKeyword	 notify new next nowait
-syn keyword pgsqlKeyword	 or old out open offset
+syn keyword pgsqlKeyword	 notify next nowait
+syn keyword pgsqlKeyword	 or out open offset
 syn keyword pgsqlKeyword	 plpgsql password privilege
 syn keyword pgsqlKeyword	 perform
 syn keyword pgsqlKeyword	 replace references restrict returning
@@ -249,7 +249,10 @@ syn keyword pgsqlTodo       todo note xxx warn warning contained
 " }}}
 
 " Section: Variables {{{2
-" User variables
+"
+" Special variables
+syn keyword pgsqlVariable   old new
+" SQL-style variables
 syn match pgsqlVariable		 "\$[0-9]\+"
 syn match pgsqlLabel		 "<<[^>]\+>>"
 
