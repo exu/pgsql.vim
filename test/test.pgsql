@@ -542,8 +542,8 @@ continue
 replica
 always
 data type
-external
 security
+external
 definer
 invoker
 comment
