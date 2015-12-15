@@ -61,133 +61,133 @@ syn match pgsqlKeyword	    "\<table\>"
 syn match pgsqlKeyword	    "\<to\>"
 syn match pgsqlKeyword	    "\<user\>"
 syn match pgsqlKeyword	    "\<update\>"
-syn match pgsqlKeyword      "\<with\(\s\+recursive\)\?\>"
+syn match pgsqlKeyword      "\<with\(\_s\+recursive\)\?\>"
 syn match pgsqlKeyword	    "\<where\>"
 
-syn match pgsqlKeyword      "\<\(begin\|commit\|rollback\|abort\|start\|end\)\(\s\+work\|\s\+transaction\)\?\>"
-syn match pgsqlKeyword      "\<isolation\s\+level\s\+\(serializable\|repeatable\s\+read\|read\s\+committed\|read\s\+uncommitted\)\>"
-syn match pgsqlKeyword      "\<read\s\+\(write\|only\)\>"
+syn match pgsqlKeyword      "\<\(begin\|commit\|rollback\|abort\|start\|end\)\(\_s\+work\|\_s\+transaction\)\?\>"
+syn match pgsqlKeyword      "\<isolation\_s\+level\_s\+\(serializable\|repeatable\_s\+read\|read\_s\+committed\|read\_s\+uncommitted\)\>"
+syn match pgsqlKeyword      "\<read\_s\+\(write\|only\)\>"
 
-syn match pgsqlKeyword      "\<\(commit\|rollback\)\s\+prepared\>"
+syn match pgsqlKeyword      "\<\(commit\|rollback\)\_s\+prepared\>"
 syn match pgsqlKeyword      "\<savepoint\>"
-syn match pgsqlKeyword      "\<rollback\s\+to\s\+savepoint\>"
-syn match pgsqlKeyword      "\<release\(\s\+savepoint\)\?\>"
+syn match pgsqlKeyword      "\<rollback\_s\+to\_s\+savepoint\>"
+syn match pgsqlKeyword      "\<release\(\_s\+savepoint\)\?\>"
 
-syn match pgsqlKeyword      "\<close\(\s\+all\)\?\>"
-syn match pgsqlKeyword      "\<\(binary\s\+\|insensitive\s\+\|\(no\s\+\)\?scroll\s\+\)*cursor\(\s\+with\(out\)\s\+hold\)\?\s\+for\>"
+syn match pgsqlKeyword      "\<close\(\_s\+all\)\?\>"
+syn match pgsqlKeyword      "\<\(binary\_s\+\|insensitive\_s\+\|\(no\_s\+\)\?scroll\_s\+\)*cursor\(\_s\+with\(out\)\_s\+hold\)\?\_s\+for\>"
 
-syn match pgsqlKeyword      "\<current\s\+of\>"
-syn match pgsqlKeyword      "\<delete\s\+from\>"
-syn match pgsqlKeyword      "\<discard\s\+\(all\|plans\|sequences\|temp\|temporary\)\>"
+syn match pgsqlKeyword      "\<current\_s\+of\>"
+syn match pgsqlKeyword      "\<delete\_s\+from\>"
+syn match pgsqlKeyword      "\<discard\_s\+\(all\|plans\|sequences\|temp\|temporary\)\>"
 
-syn match pgsqlKeyword      "\<\(alter\|add\|drop\|comment\s\+on\|create\)\s\+\(aggregate\|attribute\|cast\|collation\|conversion\|database\|default\s\+privileges\|domain\|\(event\s\+\)\?trigger\|extension\|foreign\s\+\(data\s\+wrapper\|table\)\|function\|group\|index\(\s\+concurrently\)\?\|\(procedural\s\+\)\?language\|materialized\s\+view\|operator\(\s\+class\|\s\+family\)\?\|owned\s\+by\|role\|rule\|schema\|sequence\|server\|table\|tablespace\|text\s\+search\s\+\(configuration\|dictionary\|parser\|template\)\|type\|user\(\s\+mapping\)\?\|view\)\>"
+syn match pgsqlKeyword      "\<\(alter\|add\|drop\|comment\_s\+on\|create\)\_s\+\(aggregate\|attribute\|cast\|collation\|conversion\|database\|default\_s\+privileges\|domain\|\(event\_s\+\)\?trigger\|extension\|foreign\_s\+\(data\_s\+wrapper\|table\)\|function\|group\|index\(\_s\+concurrently\)\?\|\(procedural\_s\+\)\?language\|materialized\_s\+view\|operator\(\_s\+class\|\_s\+family\)\?\|owned\_s\+by\|role\|rule\|schema\|sequence\|server\|table\|tablespace\|text\_s\+search\_s\+\(configuration\|dictionary\|parser\|template\)\|type\|user\(\_s\+mapping\)\?\|view\)\>"
 
-syn match pgsqlKeyword      "\<create\s\+default\s\+conversion\>"
-syn match pgsqlKeyword      "\<create\s\+\(or\s\+replace\s\+\)\?\(function\|\(trusted\s\+\)\?\(procedural\s\+\)\?language\|rule\)\>"
-syn match pgsqlKeyword      "\<create\s\+unique\s\+index\(\s\+concurrently\)\?\>"
-syn match pgsqlKeyword      "\<create\s\+temp\(orary\)\?\s\+sequence\>"
-syn match pgsqlKeyword      "\<create\s\+\(temp\(orary\)\?\|unlogged\)\s\+table\>"
-syn match pgsqlKeyword      "\<on\s\+commit\s\+\(preserve\s\+rows\|delete\s\+rows\|drop\)\>"
-syn match pgsqlKeyword      "\<match\s\+\(full\|partial\|simple\)\>"
-syn match pgsqlKeyword      "\<\(including\|excluding\)\s\+\(defaults\|constraints\|indexes\|storage\|comments\|all\)\>"
+syn match pgsqlKeyword      "\<create\_s\+default\_s\+conversion\>"
+syn match pgsqlKeyword      "\<create\_s\+\(or\_s\+replace\_s\+\)\?\(function\|\(trusted\_s\+\)\?\(procedural\_s\+\)\?language\|rule\)\>"
+syn match pgsqlKeyword      "\<create\_s\+unique\_s\+index\(\_s\+concurrently\)\?\>"
+syn match pgsqlKeyword      "\<create\_s\+temp\(orary\)\?\_s\+sequence\>"
+syn match pgsqlKeyword      "\<create\_s\+\(temp\(orary\)\?\|unlogged\)\_s\+table\>"
+syn match pgsqlKeyword      "\<on\_s\+commit\_s\+\(preserve\_s\+rows\|delete\_s\+rows\|drop\)\>"
+syn match pgsqlKeyword      "\<match\_s\+\(full\|partial\|simple\)\>"
+syn match pgsqlKeyword      "\<\(including\|excluding\)\_s\+\(defaults\|constraints\|indexes\|storage\|comments\|all\)\>"
 
-syn match pgsqlKeyword      "\<create\s\+\(constraint\)\?\s\+\(trigger\)\>"
-syn match pgsqlKeyword      "\<\(before\|after\|instead\s\+of\)\s\+\(insert\|update\|delete\|truncate\)\(\s\+or\s\+\(insert\|update\|delete\|truncate\)\)*\>"
-syn match pgsqlKeyword      "\<for\s\+\(each\s\+\)\?\(row\|statement\)\>"
+syn match pgsqlKeyword      "\<create\_s\+\(constraint\)\?\_s\+\(trigger\)\>"
+syn match pgsqlKeyword      "\<\(before\|after\|instead\_s\+of\)\_s\+\(insert\|update\|delete\|truncate\)\(\_s\+or\_s\+\(insert\|update\|delete\|truncate\)\)*\>"
+syn match pgsqlKeyword      "\<for\_s\+\(each\_s\+\)\?\(row\|statement\)\>"
 
-syn match pgsqlKeyword      "\<create\s\+\(or\s\+replace\s\+\)\?\(temp\(orary\)\?\s\+\)\?\(recursive\s\+\)\?view\>"
-syn match pgsqlKeyword      "\<with\s\+\(cascaded\|local\)\s\+check\s\+option\>"
+syn match pgsqlKeyword      "\<create\_s\+\(or\_s\+replace\_s\+\)\?\(temp\(orary\)\?\_s\+\)\?\(recursive\_s\+\)\?view\>"
+syn match pgsqlKeyword      "\<with\_s\+\(cascaded\|local\)\_s\+check\_s\+option\>"
 
-syn match pgsqlKeyword      "\<do\(\s\+also\|\s\+instead\)\?\(\s\+nothing\)\?\>"
+syn match pgsqlKeyword      "\<do\(\_s\+also\|\_s\+instead\)\?\(\_s\+nothing\)\?\>"
 
-syn match pgsqlKeyword      "\<\(rename\|owner\)\s\+to\>"
-syn match pgsqlKeyword      "\<for\s\+\(role\|user\)\>"
-syn match pgsqlKeyword      "\<\(drop\|rename\|validate\)\s\+constraint\>"
-syn match pgsqlKeyword      "\<\(disable\|enable\(\s\+\(replica\|always\)\)\?\)\(\s\+trigger\)\?\>"
-syn match pgsqlKeyword      "\<\(no\s\+\)\?\(handler\|validator\)\>"
-syn match pgsqlKeyword      "\<if\s\+\(not\s\+\)\?exists\>"
-syn match pgsqlKeyword      "\<\(set\|drop\)\s\+\(default\|not\s\+null\)\>"
-syn match pgsqlKeyword      "\<\(set\s\+data\s\+\)type\>"
-syn match pgsqlKeyword      "\<set\s\+storage\s\+\(plain\|external\|extended\|main\)\>"
-syn match pgsqlKeyword      "\<set\s\+statistics\>"
-syn match pgsqlKeyword      "\<cluster\s\+on\>"
-syn match pgsqlKeyword      "\<set\s\+without\s\+cluster\>"
-syn match pgsqlKeyword      "\<\(enable\|disable\)\s\+rule\>"
-syn match pgsqlKeyword      "\<as\s\+on\s\+\(select\|insert\|update\|delete\)\>"
+syn match pgsqlKeyword      "\<\(rename\|owner\)\_s\+to\>"
+syn match pgsqlKeyword      "\<for\_s\+\(role\|user\)\>"
+syn match pgsqlKeyword      "\<\(drop\|rename\|validate\)\_s\+constraint\>"
+syn match pgsqlKeyword      "\<\(disable\|enable\(\_s\+\(replica\|always\)\)\?\)\(\_s\+trigger\)\?\>"
+syn match pgsqlKeyword      "\<\(no\_s\+\)\?\(handler\|validator\)\>"
+syn match pgsqlKeyword      "\<if\_s\+\(not\_s\+\)\?exists\>"
+syn match pgsqlKeyword      "\<\(set\|drop\)\_s\+\(default\|not\_s\+null\)\>"
+syn match pgsqlKeyword      "\<\(set\_s\+data\_s\+\)type\>"
+syn match pgsqlKeyword      "\<set\_s\+storage\_s\+\(plain\|external\|extended\|main\)\>"
+syn match pgsqlKeyword      "\<set\_s\+statistics\>"
+syn match pgsqlKeyword      "\<cluster\_s\+on\>"
+syn match pgsqlKeyword      "\<set\_s\+without\_s\+cluster\>"
+syn match pgsqlKeyword      "\<\(enable\|disable\)\_s\+rule\>"
+syn match pgsqlKeyword      "\<as\_s\+on\_s\+\(select\|insert\|update\|delete\)\>"
 
-syn match pgsqlKeyword      "\<alter\s\+\(constraint\|system\)\>"
-syn match pgsqlKeyword      "\<\(initially\s\+\)\?\(deferred\|immediate\)\>"
-syn match pgsqlKeyword      "\<on\s\+\(delete\|update\)>"
-syn match pgsqlKeyword      "\<set\s\+with\(out\)\?\s\+oids\>"
-syn match pgsqlKeyword      "\<for\s\+\(search\|order\s\+by\)\>"
-syn match pgsqlKeyword      "\<\(no\s\+\)\?inherit\>"
-syn match pgsqlKeyword      "\<\(not\s\+\)\?of\>"
-syn match pgsqlKeyword      "\<primary\s\+key\>"
-syn match pgsqlKeyword      "\<replica\s\+identity\>"
-syn match pgsqlKeyword      "\<using\(\s\+index\(\s\+tablespace\)\?\)\?\>"
-syn match pgsqlKeyword      "\<with\(out\)\?\s\+function\>"
-syn match pgsqlKeyword      "\<with\s\+inout\>"
-syn match pgsqlKeyword      "\<as\s\+\(assignment\|implicit\)\>"
+syn match pgsqlKeyword      "\<alter\_s\+\(constraint\|system\)\>"
+syn match pgsqlKeyword      "\<\(initially\_s\+\)\?\(deferred\|immediate\)\>"
+syn match pgsqlKeyword      "\<on\_s\+\(delete\|update\)>"
+syn match pgsqlKeyword      "\<set\_s\+with\(out\)\?\_s\+oids\>"
+syn match pgsqlKeyword      "\<for\_s\+\(search\|order\_s\+by\)\>"
+syn match pgsqlKeyword      "\<\(no\_s\+\)\?inherit\>"
+syn match pgsqlKeyword      "\<\(not\_s\+\)\?of\>"
+syn match pgsqlKeyword      "\<primary\_s\+key\>"
+syn match pgsqlKeyword      "\<replica\_s\+identity\>"
+syn match pgsqlKeyword      "\<using\(\_s\+index\(\_s\+tablespace\)\?\)\?\>"
+syn match pgsqlKeyword      "\<with\(out\)\?\_s\+function\>"
+syn match pgsqlKeyword      "\<with\_s\+inout\>"
+syn match pgsqlKeyword      "\<as\_s\+\(assignment\|implicit\)\>"
 
-syn match pgsqlKeyword      "\<explain\(\s\+verbose\|\s\+analyze\)*\>"
-syn match pgsqlKeyword      "\<\(analyze\|verbose\|costs\|buffers\|timing\)\(\s\+\(true\|on\|1\|false\|off\|0\)\)\?\>"
-syn match pgsqlKeyword      "\<format\s\+\(text\|xml\|json\|yaml\)\>"
+syn match pgsqlKeyword      "\<explain\(\_s\+verbose\|\_s\+analyze\)*\>"
+syn match pgsqlKeyword      "\<\(analyze\|verbose\|costs\|buffers\|timing\)\(\_s\+\(true\|on\|1\|false\|off\|0\)\)\?\>"
+syn match pgsqlKeyword      "\<format\_s\+\(text\|xml\|json\|yaml\)\>"
 
-syn match pgsqlKeyword      "\<\(fetch\|move\)\s\+\(next\|prior\|first\|last\|absolute\|relative\|\(forward\|backward\)\(\s\+all\)\?\)\>"
+syn match pgsqlKeyword      "\<\(fetch\|move\)\_s\+\(next\|prior\|first\|last\|absolute\|relative\|\(forward\|backward\)\(\_s\+all\)\?\)\>"
 
-syn match pgsqlKeyword      "\<grant\s\+\(select\|insert\|update\|delete\|truncate\|references\|trigger\|connect\|temporary\|temp\|usage\|execute\|all\(\s\+privileges\)\?\)\(\s*,\s*\(select\|insert\|update\|delete\|truncate\|references\|trigger\|connect\|temporary\|temp\|usage\|execute\|all\(\s\+privileges\)\?\)\)*\>"
-syn match pgsqlKeyword      "\<on\s\+\(table\|sequence\|database\|domain\|foreign\s\+data\s\+wrapper\|foreign\s\+server\|function\|language\|large\s\+object\|schema\|tablespace\|type\|all\s\+\(tables\|sequences\|functions\)\s\+in\s\+schema\)\>"
-syn match pgsqlKeyword      "\<with\s\+\(grant\|admin\)\s\+option\>"
-syn match pgsqlKeyword      "\<insert\s\+into\>"
-syn match pgsqlKeyword      "\<\(default\s\+\)\?values\>"
+syn match pgsqlKeyword      "\<grant\_s\+\(select\|insert\|update\|delete\|truncate\|references\|trigger\|connect\|temporary\|temp\|usage\|execute\|all\(\_s\+privileges\)\?\)\(\_s*,\_s*\(select\|insert\|update\|delete\|truncate\|references\|trigger\|connect\|temporary\|temp\|usage\|execute\|all\(\_s\+privileges\)\?\)\)*\>"
+syn match pgsqlKeyword      "\<on\_s\+\(table\|sequence\|database\|domain\|foreign\_s\+data\_s\+wrapper\|foreign\_s\+server\|function\|language\|large\_s\+object\|schema\|tablespace\|type\|all\_s\+\(tables\|sequences\|functions\)\_s\+in\_s\+schema\)\>"
+syn match pgsqlKeyword      "\<with\_s\+\(grant\|admin\)\_s\+option\>"
+syn match pgsqlKeyword      "\<insert\_s\+into\>"
+syn match pgsqlKeyword      "\<\(default\_s\+\)\?values\>"
 
-syn match pgsqlKeyword      "\<\(called\|returns\s\+null\)\s\+on\s\+null\s\+input\>"
-syn match pgsqlKeyword      "\<\(external\s\+\)\?security\s\+\(definer\|invoker\)\>"
-syn match pgsqlKeyword      "\<from\s\+current\>"
+syn match pgsqlKeyword      "\<\(called\|returns\_s\+null\)\_s\+on\_s\+null\_s\+input\>"
+syn match pgsqlKeyword      "\<\(external\_s\+\)\?security\_s\+\(definer\|invoker\)\>"
+syn match pgsqlKeyword      "\<from\_s\+current\>"
 
-syn match pgsqlKeyword      "\<in\s\+schema\>"
-syn match pgsqlKeyword      "\<in\s\+\(access\s\+share\|row\s\+share\|row\s\+exclusive\|\s\+share\s\+update\s\+exclusive\|share\|share\s\+row\s\+exclusive\|exclusive\|access\s\+exclusive\)\s\+mode\>"
+syn match pgsqlKeyword      "\<in\_s\+schema\>"
+syn match pgsqlKeyword      "\<in\_s\+\(access\_s\+share\|row\_s\+share\|row\_s\+exclusive\|\_s\+share\_s\+update\_s\+exclusive\|share\|share\_s\+row\_s\+exclusive\|exclusive\|access\_s\+exclusive\)\_s\+mode\>"
 
-syn match pgsqlKeyword      "\<prepare\(\s\+transaction\)\?\>"
-syn match pgsqlKeyword      "\<execute\(\s\+procedure\)\?\>"
-syn match pgsqlKeyword      "\<deallocate\(\s\+prepare\)\?\>"
-syn match pgsqlKeyword      "\<\(reassign\s\+\)\?owned\s\+by\>"
+syn match pgsqlKeyword      "\<prepare\(\_s\+transaction\)\?\>"
+syn match pgsqlKeyword      "\<execute\(\_s\+procedure\)\?\>"
+syn match pgsqlKeyword      "\<deallocate\(\_s\+prepare\)\?\>"
+syn match pgsqlKeyword      "\<\(reassign\_s\+\)\?owned\_s\+by\>"
 
-syn match pgsqlKeyword      "\<refresh\s\+materialized\s\+view\(\s\+concurrently\)\?\>"
-syn match pgsqlKeyword      "\<with\s\+\(no\s\+\)\?data\>"
+syn match pgsqlKeyword      "\<refresh\_s\+materialized\_s\+view\(\_s\+concurrently\)\?\>"
+syn match pgsqlKeyword      "\<with\_s\+\(no\_s\+\)\?data\>"
 
-syn match pgsqlKeyword      "\<reindex\s\+\(index\|table\|database\|system\)\>"
+syn match pgsqlKeyword      "\<reindex\_s\+\(index\|table\|database\|system\)\>"
 
-syn match pgsqlKeyword      "\<reset\(\s\+all\)\?\>"
+syn match pgsqlKeyword      "\<reset\(\_s\+all\)\?\>"
 
-syn match pgsqlKeyword      "\<revoke\(\s\+grant\s\+option\s\+for\)\?\>"
-syn match pgsqlKeyword      "\<revoke\(\s\+grant\s\+option\s\+for\)\?\s\+\(select\|insert\|update\|delete\|truncate\|references\|trigger\|connect\|temporary\|temp\|usage\|execute\|all\(\s\+privileges\)\?\)\(\s*,\s*\(select\|insert\|update\|delete\|truncate\|references\|trigger\|connect\|temporary\|temp\|usage\|execute\|all\(\s\+privileges\)\?\)\)*\>"
-syn match pgsqlKeyword      "\<security\s\+label\>"
+syn match pgsqlKeyword      "\<revoke\(\_s\+grant\_s\+option\_s\+for\)\?\>"
+syn match pgsqlKeyword      "\<revoke\(\_s\+grant\_s\+option\_s\+for\)\?\_s\+\(select\|insert\|update\|delete\|truncate\|references\|trigger\|connect\|temporary\|temp\|usage\|execute\|all\(\_s\+privileges\)\?\)\(\_s*,\_s*\(select\|insert\|update\|delete\|truncate\|references\|trigger\|connect\|temporary\|temp\|usage\|execute\|all\(\_s\+privileges\)\?\)\)*\>"
+syn match pgsqlKeyword      "\<security\_s\+label\>"
 
-syn match pgsqlKeyword      "\<select\(\s\+all\|\s\+distinct\(\s\+on\)\?\)\?\>"
-syn match pgsqlKeyword      "\<for\s\+\(update\|no\s\+key\s\+update\|share\|key\s\+share\)\s\+of\>"
-syn match pgsqlKeyword      "\<with\s\+ordinality\>"
-syn match pgsqlKeyword      "\<\(\(inner\|cross\|\(left\|right\|full\)\(\s\+outer\)\?\)\s\+\)\?join\>"
-syn match pgsqlKeyword      "\<union\(\s\+all\)\?\>"
-syn match pgsqlKeyword      "\<\(unbounded\s\+\)\?\(preceding\|following\)\>"
-syn match pgsqlKeyword      "\<order\s\+by\>"
-syn match pgsqlKeyword      "\<current\s\+row\>"
-syn match pgsqlKeyword      "\<partition\s\+by\>"
-syn match pgsqlKeyword      "\<nulls\s\+\(first\|last\)\>"
-syn match pgsqlKeyword      "\<into\(\s\+\(temp\|temporary\|unlogged\)\)\?\(\s\+table\)\?\>"
-syn match pgsqlKeyword      "\<set\s\+\(session\|local\|tablespace\|schema\)\?\>"
-syn match pgsqlKeyword      "\<set\s\+constraints\(\s\+all\)\?\>"
-syn match pgsqlKeyword      "\<set\(\s\+session\|\s\+local\)\?\s\+\(role\(\s\+none\)\?\)\>"
-syn match pgsqlKeyword      "\<set\(\s\+session\|\s\+local\)\?\s\+\(session\s\+authorization\(\s\+default\)\?\)\>"
-syn match pgsqlKeyword      "\<reset\s\+\(role\|session\s\+authorization\)\>"
-syn match pgsqlKeyword      "\<set\s\+transaction\(\s\+snapshot\)\?\>"
-syn match pgsqlKeyword      "\<set\s\+session\s\+characteristics\s\+as\s\+transaction\>"
+syn match pgsqlKeyword      "\<select\(\_s\+all\|\_s\+distinct\(\_s\+on\)\?\)\?\>"
+syn match pgsqlKeyword      "\<for\_s\+\(update\|no\_s\+key\_s\+update\|share\|key\_s\+share\)\_s\+of\>"
+syn match pgsqlKeyword      "\<with\_s\+ordinality\>"
+syn match pgsqlKeyword      "\<\(\(inner\|cross\|\(left\|right\|full\)\(\_s\+outer\)\?\)\_s\+\)\?join\>"
+syn match pgsqlKeyword      "\<union\(\_s\+all\)\?\>"
+syn match pgsqlKeyword      "\<\(unbounded\_s\+\)\?\(preceding\|following\)\>"
+syn match pgsqlKeyword      "\<order\_s\+by\>"
+syn match pgsqlKeyword      "\<current\_s\+row\>"
+syn match pgsqlKeyword      "\<partition\_s\+by\>"
+syn match pgsqlKeyword      "\<nulls\_s\+\(first\|last\)\>"
+syn match pgsqlKeyword      "\<into\(\_s\+\(temp\|temporary\|unlogged\)\)\?\(\_s\+table\)\?\>"
+syn match pgsqlKeyword      "\<set\_s\+\(session\|local\|tablespace\|schema\)\?\>"
+syn match pgsqlKeyword      "\<set\_s\+constraints\(\_s\+all\)\?\>"
+syn match pgsqlKeyword      "\<set\(\_s\+session\|\_s\+local\)\?\_s\+\(role\(\_s\+none\)\?\)\>"
+syn match pgsqlKeyword      "\<set\(\_s\+session\|\_s\+local\)\?\_s\+\(session\_s\+authorization\(\_s\+default\)\?\)\>"
+syn match pgsqlKeyword      "\<reset\_s\+\(role\|session\_s\+authorization\)\>"
+syn match pgsqlKeyword      "\<set\_s\+transaction\(\_s\+snapshot\)\?\>"
+syn match pgsqlKeyword      "\<set\_s\+session\_s\+characteristics\_s\+as\_s\+transaction\>"
 
-syn match pgsqlKeyword      "\<show\(\s\+all\)\?\>"
+syn match pgsqlKeyword      "\<show\(\_s\+all\)\?\>"
 
-syn match pgsqlKeyword      "\<\(restart\|continue\)\s\+identity\>"
+syn match pgsqlKeyword      "\<\(restart\|continue\)\_s\+identity\>"
 
-syn match pgsqlKeyword      "\<vacuum\(\s\+full\|\s\+freeze\|\s\+verbose\)*\>"
+syn match pgsqlKeyword      "\<vacuum\(\_s\+full\|\_s\+freeze\|\_s\+verbose\)*\>"
 
 syn keyword pgsqlKeyword	 and alias asc
 syn keyword pgsqlKeyword	 cascade current_date current_time current_timestamp
@@ -298,41 +298,41 @@ syn keyword pgsqlType        xml xid
 " %rowtype, %type PL/pgSQL constructs
 syn match pgsqlType          "%\(row\)\?type\>"
 " this should actually be the end of a region
-syn match pgsqlType          "\<with\(out\)\?\s\+time\s\+zone\>"
+syn match pgsqlType          "\<with\(out\)\?\_s\+time\_s\+zone\>"
 
 " Section: Variable types {{{3
 syn match  pgsqlType		 "\<float\>"
-syn region pgsqlType		 start="\<float\s*(" end=")" contains=pgsqlNumber,pgsqlVariable
-syn match  pgsqlType		 "\<double\s\+precision\>"
-syn region pgsqlType		 start="\<double\s\+precision\s*(" end=")" contains=pgsqlNumber,pgsqlVariable
+syn region pgsqlType		 start="\<float\_s*(" end=")" contains=pgsqlNumber,pgsqlVariable
+syn match  pgsqlType		 "\<double\_s\+precision\>"
+syn region pgsqlType		 start="\<double\_s\+precision\_s*(" end=")" contains=pgsqlNumber,pgsqlVariable
 syn match  pgsqlType		 "\<numeric\>"
-syn region pgsqlType		 start="\<numeric\s*(" end=")" contains=pgsqlNumber,pgsqlVariable
+syn region pgsqlType		 start="\<numeric\_s*(" end=")" contains=pgsqlNumber,pgsqlVariable
 syn match  pgsqlType		 "\<decimal\>"
-syn region pgsqlType		 start="\<decimal\s*(" end=")" contains=pgsqlNumber,pgsqlVariable
+syn region pgsqlType		 start="\<decimal\_s*(" end=")" contains=pgsqlNumber,pgsqlVariable
 syn match  pgsqlType		 "\<time\(stamp\(tz\)\?\)\?\>"
-syn region pgsqlType		 start="\<time\(stamp\(tz\)\?\)\?\s*(" end=")" contains=pgsqlNumber,pgsqlVariable
+syn region pgsqlType		 start="\<time\(stamp\(tz\)\?\)\?\_s*(" end=")" contains=pgsqlNumber,pgsqlVariable
 syn match  pgsqlType		 "\<interval\>"
-syn region pgsqlType		 start="\<interval\s*(" end=")" contains=pgsqlNumber,pgsqlVariable
-syn match  pgsqlType		 "\<interval\s\+\(year\|month\|day\|hour\|minute\|second\)\>"
-syn match  pgsqlType		 "\<interval\s\+year\s\+to\s\+month\>"
-syn match  pgsqlType		 "\<interval\s\+day\s\+to\s\+\(hour\|minute\|second\)\>"
-syn match  pgsqlType		 "\<interval\s\+hour\s\+to\s\+\(minute\|second\)\>"
-syn match  pgsqlType		 "\<interval\s\+minute\s\+to\s\+second\>"
-syn region pgsqlType		 start="\<interval\s\+\(\(day\|hour\|minute\)\s\+to\s\+\)\?second\s*(" end=")" contains=pgsqlNumber,pgsqlVariable
+syn region pgsqlType		 start="\<interval\_s*(" end=")" contains=pgsqlNumber,pgsqlVariable
+syn match  pgsqlType		 "\<interval\_s\+\(year\|month\|day\|hour\|minute\|second\)\>"
+syn match  pgsqlType		 "\<interval\_s\+year\_s\+to\_s\+month\>"
+syn match  pgsqlType		 "\<interval\_s\+day\_s\+to\_s\+\(hour\|minute\|second\)\>"
+syn match  pgsqlType		 "\<interval\_s\+hour\_s\+to\_s\+\(minute\|second\)\>"
+syn match  pgsqlType		 "\<interval\_s\+minute\_s\+to\_s\+second\>"
+syn region pgsqlType		 start="\<interval\_s\+\(\(day\|hour\|minute\)\_s\+to\_s\+\)\?second\_s*(" end=")" contains=pgsqlNumber,pgsqlVariable
 syn match  pgsqlType		 "\<char\>"
-syn region pgsqlType		 start="\<char\s*(" end=")" contains=pgsqlNumber,pgsqlVariable
+syn region pgsqlType		 start="\<char\_s*(" end=")" contains=pgsqlNumber,pgsqlVariable
 syn match  pgsqlType		 "\<character\>"
-syn region pgsqlType		 start="\<character\s*(" end=")" contains=pgsqlNumber,pgsqlVariable
+syn region pgsqlType		 start="\<character\_s*(" end=")" contains=pgsqlNumber,pgsqlVariable
 syn match  pgsqlType		 "\<varchar\>"
-syn region pgsqlType		 start="\<varchar\s*(" end=")" contains=pgsqlNumber,pgsqlVariable
-syn match  pgsqlType		 "\<character\s\+varying\>"
-syn region pgsqlType		 start="\<character\s\+varying\s*(" end=")" contains=pgsqlNumber,pgsqlVariable
+syn region pgsqlType		 start="\<varchar\_s*(" end=")" contains=pgsqlNumber,pgsqlVariable
+syn match  pgsqlType		 "\<character\_s\+varying\>"
+syn region pgsqlType		 start="\<character\_s\+varying\_s*(" end=")" contains=pgsqlNumber,pgsqlVariable
 syn match  pgsqlType		 "\<bit\>"
-syn region pgsqlType		 start="\<bit\s*(" end=")" contains=pgsqlNumber,pgsqlVariable
+syn region pgsqlType		 start="\<bit\_s*(" end=")" contains=pgsqlNumber,pgsqlVariable
 syn match  pgsqlType		 "\<varbit\>"
-syn region pgsqlType		 start="\<varbit\s*(" end=")" contains=pgsqlNumber,pgsqlVariable
-syn match  pgsqlType		 "\<bit\s\+varying\>"
-syn region pgsqlType		 start="\<bit\s\+varying\s*(" end=")" contains=pgsqlNumber,pgsqlVariable
+syn region pgsqlType		 start="\<varbit\_s*(" end=")" contains=pgsqlNumber,pgsqlVariable
+syn match  pgsqlType		 "\<bit\_s\+varying\>"
+syn region pgsqlType		 start="\<bit\_s\+varying\_s*(" end=")" contains=pgsqlNumber,pgsqlVariable
 " }}}
 
 " Section: Operators {{{1
@@ -342,22 +342,22 @@ syn region pgsqlType		 start="\<bit\s\+varying\s*(" end=")" contains=pgsqlNumber
 syn keyword pgsqlOperator	 between and is like regexp rlike
 syn match   pgsqlOperator	 "\<not\>"
 syn match   pgsqlOperator	 "\<or\>"
-syn region pgsqlOperator	 start="isnull\s*(" end=")" contains=ALL
-syn region pgsqlOperator	 start="coalesce\s*(" end=")" contains=ALL
-syn region pgsqlOperator	 start="interval\s*(" end=")" contains=ALL
-syn region pgsqlOperator	 start="in\s*(" end=")" contains=ALL
-syn region pgsqlOperator	 start="any\s*(" end=")" contains=ALL
-syn region pgsqlOperator	 start="some\s*(" end=")" contains=ALL
-syn region pgsqlOperator	 start="all\s*(" end=")" contains=ALL
-syn region pgsqlOperator	 start="exists\s*(" end=")" contains=ALL
-syn region pgsqlOperator	 start="array\s*\[" end="\]" contains=ALL
+syn region pgsqlOperator	 start="isnull\_s*(" end=")" contains=ALL
+syn region pgsqlOperator	 start="coalesce\_s*(" end=")" contains=ALL
+syn region pgsqlOperator	 start="interval\_s*(" end=")" contains=ALL
+syn region pgsqlOperator	 start="in\_s*(" end=")" contains=ALL
+syn region pgsqlOperator	 start="any\_s*(" end=")" contains=ALL
+syn region pgsqlOperator	 start="some\_s*(" end=")" contains=ALL
+syn region pgsqlOperator	 start="all\_s*(" end=")" contains=ALL
+syn region pgsqlOperator	 start="exists\_s*(" end=")" contains=ALL
+syn region pgsqlOperator	 start="array\_s*\[" end="\]" contains=ALL
 
 " Let's consider this an operator, not operator + constant
-syn match   pgsqlKeyword	 "\<not\s\+null\>"
+syn match   pgsqlKeyword	 "\<not\_s\+null\>"
 " }}}
 
 " Section: psql special stuff {{{1
-syn region pgsqlCopy    start="\<copy\([^;]\|\n\)\+from\s\+stdin\([^;]\|\n\)*;" end="\\\."
+syn region pgsqlCopy    start="\<copy\([^;]\|\n\)\+from\_s\+stdin\([^;]\|\n\)*;" end="\\\."
 " TODO: the content would be nice "Normal", not "Special"
 syn region pgsqlBackslash	 start="^\\" end="$"
 " }}}

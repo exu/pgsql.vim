@@ -26,7 +26,8 @@ double precision
 smallserial serial2
 serial      serial4
 bigserial   serial8
-float       float (10)      float(10)
+float       float
+    (10)      float(10)
 
 money
 
@@ -51,7 +52,8 @@ time
 time without time zone
 time with time zone
 time (10)
-time (10) without time zone
+time
+    (10) without time zone
 time (10) with time zone
 interval
 interval (10)
@@ -244,7 +246,8 @@ cost
 rows
 from current
 alter group x add user
-alter group x drop user
+alter
+    group x drop user
 set storage plain
 set statistics
 cluster on
@@ -252,7 +255,8 @@ set without cluster
 for search
 for order by
 alter system set
-alter system reset
+alter
+    system reset
 alter system reset all
 disable rule
 enable rule
@@ -296,7 +300,8 @@ create or replace trusted procedural language x handler x validator x inline x
 create trusted procedural language x handler x validator x inline x
 create unique index foo
 create unique index concurrently foo
-create rule asdf as on insert
+create rule asdf as on
+    insert to wherever do instead nothing
 create or replace rule as on update to foo where bah do also nothing
 do instead whatever
 create temp sequence
@@ -306,7 +311,8 @@ on commit delete rows
 on commit drop
 match full match partial match simple
 including constraints
-excluding comments
+excluding
+    comments
 using index tablespace
 
 create trigger
@@ -325,7 +331,8 @@ create temporary recursive view
 with cascaded check option
 
 drop aggregate if exists asd cascade;
-drop cast if exists afff restrict;
+drop cast if
+    exists afff restrict;
 drop collation
 drop conversion
 drop database
@@ -337,7 +344,8 @@ drop foreign table
 drop function if exists
 drop group
 drop index
-drop index concurrently
+drop
+    index concurrently
 drop language
 drop procedural language
 drop materialized view
