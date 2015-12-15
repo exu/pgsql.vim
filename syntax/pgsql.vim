@@ -251,7 +251,12 @@ syn keyword pgsqlTodo       todo note xxx warn warning contained
 " Section: Variables {{{2
 "
 " Special variables
+
 syn keyword pgsqlVariable   old new
+" Variables available in trigger definitions
+syn keyword pgsqlVariable   tg_name tg_when tg_level tg_op tg_relid tg_relname
+syn keyword pgsqlVariable   tg_table_name tg_table_schema tg_nargs tg_argv
+
 " SQL-style variables
 syn match pgsqlVariable		 "\$[0-9]\+"
 syn match pgsqlLabel		 "<<[^>]\+>>"

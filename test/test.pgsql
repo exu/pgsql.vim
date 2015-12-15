@@ -159,6 +159,9 @@ U&'d\0061t\+000061'
 5e2
 1.925e-3
 
+-- Variables
+tg_op old new
+
 -- Statements
 begin;
 begin work;
@@ -522,3 +525,22 @@ security
 definer
 invoker
 comment
+
+
+-- Complete examples
+
+CREATE OR REPLACE FUNCTION audit."foobar.account_fn"()
+ RETURNS trigger
+ LANGUAGE plpgsql
+ SECURITY DEFINER
+AS $function$
+begin
+    if tg_op <> 'DELETE' then
+        insert into audit."foobar.account" values (default, tg_op, new.*);
+        return null;
+    else
+        insert into audit."foobar.account" values (default, tg_op, old.*);
+        return null;
+    end if;
+end
+$function$;
