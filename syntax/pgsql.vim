@@ -38,6 +38,8 @@ syn match pgsqlKeyword	    "\<default\>"
 syn match pgsqlKeyword	    "\<do\>"
 syn match pgsqlKeyword	    "\<drop\>"
 syn match pgsqlKeyword	    "\<end\>"
+" fun fact: 'create table fetch ()' fails, but not 'create table move ()'
+syn match pgsqlKeyword      "\<fetch\>"
 syn match pgsqlKeyword      "\<for\>"
 syn match pgsqlKeyword      "\<full\>"
 syn match pgsqlKeyword	    "\<from\>"
