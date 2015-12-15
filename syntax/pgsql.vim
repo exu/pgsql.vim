@@ -47,6 +47,7 @@ syn match pgsqlKeyword	    "\<group\>"
 syn match pgsqlKeyword      "\<if\>"
 syn match pgsqlOperator     "\<in\>"
 syn match pgsqlKeyword	    "\<key\>"
+syn match pgsqlKeyword      "\<language\>"
 syn match pgsqlKeyword      "\<nothing\>"
 syn match pgsqlKeyword      "\<on\>"
 syn match pgsqlKeyword	    "\<only\>"
@@ -202,7 +203,7 @@ syn keyword pgsqlKeyword	 immutable inherits inline intersect
 syn keyword pgsqlKeyword	 leakproof lock local limit load loop listen lateral
 syn keyword pgsqlKeyword	 notify next nowait
 syn keyword pgsqlKeyword	 or out open offset
-syn keyword pgsqlKeyword	 plpgsql password privilege
+syn keyword pgsqlKeyword	 password privilege
 syn keyword pgsqlKeyword	 perform
 syn keyword pgsqlKeyword	 replace references restrict returning
 syn keyword pgsqlKeyword	 reassing return
