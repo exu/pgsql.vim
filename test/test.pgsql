@@ -56,8 +56,12 @@ time
     (10) without time zone
 time (10) with time zone
 interval
+extract(month from whatever)
 interval (10)
+-- TODO: why is this all a keyword???
+extract(month from whatever)
 interval year
+extract(month from whatever)
 interval month
 interval day
 interval hour
