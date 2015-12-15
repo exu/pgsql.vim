@@ -296,7 +296,7 @@ create or replace trusted procedural language x handler x validator x inline x
 create trusted procedural language x handler x validator x inline x
 create unique index foo
 create unique index concurrently foo
-create rule
+create rule asdf as on insert
 create or replace rule as on update to foo where bah do also nothing
 do instead whatever
 create temp sequence

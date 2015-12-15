@@ -113,6 +113,7 @@ syn match pgsqlKeyword      "\<set\s\+statistics\>"
 syn match pgsqlKeyword      "\<cluster\s\+on\>"
 syn match pgsqlKeyword      "\<set\s\+without\s\+cluster\>"
 syn match pgsqlKeyword      "\<\(enable\|disable\)\s\+rule\>"
+syn match pgsqlKeyword      "\<as\s\+on\s\+\(select\|insert\|update\|delete\)\>"
 
 syn match pgsqlKeyword      "\<alter\s\+\(constraint\|system\)\>"
 syn match pgsqlKeyword      "\<\(initially\s\+\)\?\(deferred\|immediate\)\>"
