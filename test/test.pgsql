@@ -302,7 +302,9 @@ using index tablespace
 
 create trigger
 create constraint trigger
-before after instead of
+before insert
+after update or delete
+instead of truncate
 for row
 for statement
 for each row
@@ -485,7 +487,6 @@ function
 index
 concurrently
 index concurrently
-language
 procedural language
 role
 rule
@@ -525,6 +526,8 @@ security
 definer
 invoker
 comment
+before mah
+instead of bah
 
 
 -- Complete examples
@@ -544,3 +547,7 @@ begin
     end if;
 end
 $function$;
+
+CREATE TRIGGER "foobar.account_audit_trg"
+AFTER INSERT OR UPDATE OR UPDATE ON foobar.account
+FOR EACH ROW EXECUTE PROCEDURE audit."foobar.account_fn"();

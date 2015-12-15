@@ -34,7 +34,6 @@ syn match pgsqlKeyword	    "\<all\>"
 syn match pgsqlKeyword	    "\<cast\>"
 syn match pgsqlKeyword	    "\<cluster\>"
 syn match pgsqlKeyword	    "\<copy\>"
-syn match pgsqlKeyword	    "\<delete\>"
 syn match pgsqlKeyword	    "\<default\>"
 syn match pgsqlKeyword	    "\<do\>"
 syn match pgsqlKeyword	    "\<drop\>"
@@ -78,6 +77,7 @@ syn match pgsqlKeyword      "\<close\(\s\+all\)\?\>"
 syn match pgsqlKeyword      "\<\(binary\s\+\|insensitive\s\+\|\(no\s\+\)\?scroll\s\+\)*cursor\(\s\+with\(out\)\s\+hold\)\?\s\+for\>"
 
 syn match pgsqlKeyword      "\<current\s\+of\>"
+syn match pgsqlKeyword      "\<delete\s\+from\>"
 syn match pgsqlKeyword      "\<discard\s\+\(all\|plans\|sequences\|temp\|temporary\)\>"
 
 syn match pgsqlKeyword      "\<\(alter\|add\|drop\|comment\s\+on\|create\)\s\+\(aggregate\|attribute\|cast\|collation\|conversion\|database\|default\s\+privileges\|domain\|\(event\s\+\)\?trigger\|extension\|foreign\s\+\(data\s\+wrapper\|table\)\|function\|group\|index\(\s\+concurrently\)\?\|\(procedural\s\+\)\?language\|materialized\s\+view\|operator\(\s\+class\|\s\+family\)\?\|owned\s\+by\|role\|rule\|schema\|sequence\|server\|table\|tablespace\|text\s\+search\s\+\(configuration\|dictionary\|parser\|template\)\|type\|user\(\s\+mapping\)\?\|view\)\>"
@@ -92,7 +92,7 @@ syn match pgsqlKeyword      "\<match\s\+\(full\|partial\|simple\)\>"
 syn match pgsqlKeyword      "\<\(including\|excluding\)\s\+\(defaults\|constraints\|indexes\|storage\|comments\|all\)\>"
 
 syn match pgsqlKeyword      "\<create\s\+\(constraint\)\?\s\+\(trigger\)\>"
-syn match pgsqlKeyword      "\<\(before\|after\|instead\s\+of\)\>"
+syn match pgsqlKeyword      "\<\(before\|after\|instead\s\+of\)\s\+\(insert\|update\|delete\|truncate\)\(\s\+or\s\+\(insert\|update\|delete\|truncate\)\)*\>"
 syn match pgsqlKeyword      "\<for\s\+\(each\s\+\)\?\(row\|statement\)\>"
 
 syn match pgsqlKeyword      "\<create\s\+\(or\s\+replace\s\+\)\?\(temp\(orary\)\?\s\+\)\?\(recursive\s\+\)\?view\>"
@@ -188,8 +188,7 @@ syn match pgsqlKeyword      "\<\(restart\|continue\)\s\+identity\>"
 
 syn match pgsqlKeyword      "\<vacuum\(\s\+full\|\s\+freeze\|\s\+verbose\)*\>"
 
-syn keyword pgsqlKeyword	 after and alias asc
-syn keyword pgsqlKeyword	 before
+syn keyword pgsqlKeyword	 and alias asc
 syn keyword pgsqlKeyword	 cascade current_date current_time current_timestamp
 syn keyword pgsqlKeyword	 checkpoint check cost
 syn keyword pgsqlKeyword	 check column columns constraint
@@ -202,7 +201,7 @@ syn keyword pgsqlKeyword	 having
 syn keyword pgsqlKeyword	 immutable inherits inline intersect
 syn keyword pgsqlKeyword	 leakproof lock local limit load loop listen lateral
 syn keyword pgsqlKeyword	 notify next nowait
-syn keyword pgsqlKeyword	 or out open offset
+syn keyword pgsqlKeyword	 out open offset
 syn keyword pgsqlKeyword	 password privilege
 syn keyword pgsqlKeyword	 perform
 syn keyword pgsqlKeyword	 replace references restrict returning
@@ -339,8 +338,9 @@ syn region pgsqlType		 start="\<bit\s\+varying\s*(" end=")" contains=pgsqlNumber
 " Logical, string and  numeric operators
 " TODO: terms contained within the function are not keywords! --Ryan Delaney 2014-02-06T14:11-0800 OpenGPG: 0D98863B4E1D07B6
 " note: the 'in' operator is defined above, before lockmodes
-syn keyword pgsqlOperator	 between and or is like regexp rlike
+syn keyword pgsqlOperator	 between and is like regexp rlike
 syn match   pgsqlOperator	 "\<not\>"
+syn match   pgsqlOperator	 "\<or\>"
 syn region pgsqlOperator	 start="isnull\s*(" end=")" contains=ALL
 syn region pgsqlOperator	 start="coalesce\s*(" end=")" contains=ALL
 syn region pgsqlOperator	 start="interval\s*(" end=")" contains=ALL
